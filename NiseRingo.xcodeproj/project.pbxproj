@@ -1,0 +1,733 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		187E6C4416C14FEB000D917D /* SCGhostPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E6C4316C14FEB000D917D /* SCGhostPreviewView.m */; };
+		187E6C4716C15CC6000D917D /* SCInstalledGhostsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E6C4616C15CC6000D917D /* SCInstalledGhostsList.m */; };
+		187E6C4A16C15E6D000D917D /* SCInstalledBalloonsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E6C4916C15E6D000D917D /* SCInstalledBalloonsList.m */; };
+		187E6C4D16C15E90000D917D /* SCShellsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 187E6C4C16C15E90000D917D /* SCShellsList.m */; };
+		187F835517103AD8007B1DB1 /* SCBlockedDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F835417103AD8007B1DB1 /* SCBlockedDescription.m */; };
+		187F8EE316B6ABEA006FC337 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187F8EE216B6ABEA006FC337 /* Cocoa.framework */; };
+		187F8EED16B6ABEA006FC337 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 187F8EEB16B6ABEA006FC337 /* InfoPlist.strings */; };
+		187F8EEF16B6ABEA006FC337 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F8EEE16B6ABEA006FC337 /* main.m */; };
+		187F8EF316B6ABEB006FC337 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 187F8EF116B6ABEB006FC337 /* Credits.rtf */; };
+		187F8EFC16B6ABEB006FC337 /* NiseRingo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 187F8EFA16B6ABEB006FC337 /* NiseRingo.xcdatamodeld */; };
+		187F8F0A16B6B646006FC337 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 187F8F0C16B6B646006FC337 /* MainMenu.xib */; };
+		187F8F1016B6CDAE006FC337 /* SCFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F8F0F16B6CDAE006FC337 /* SCFoundation.m */; };
+		187F8F1316B6CE91006FC337 /* SCMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187F8F1216B6CE91006FC337 /* SCMenuController.m */; };
+		18800931178DA12C002AC35E /* SCStatusBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18800930178DA12C002AC35E /* SCStatusBackgroundView.m */; };
+		18800934178DA65D002AC35E /* SCStatusTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18800933178DA65D002AC35E /* SCStatusTextView.m */; };
+		18800937178DA672002AC35E /* SCStatusProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18800936178DA672002AC35E /* SCStatusProgressBarView.m */; };
+		1880093A178DA72E002AC35E /* SCStatusWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 18800939178DA72E002AC35E /* SCStatusWindow.m */; };
+		1880093D178DA751002AC35E /* SCStatusWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1880093C178DA751002AC35E /* SCStatusWindowController.m */; };
+		18800C3C16B81B5B001CAB81 /* PrefWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18800C3B16B81B5B001CAB81 /* PrefWindow.xib */; };
+		18800C4016B82A06001CAB81 /* SCPrefWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18800C3F16B82A06001CAB81 /* SCPrefWindowController.m */; };
+		1881B9A216BA7DD900D3787C /* SafetyBalloon.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9A116BA7DD900D3787C /* SafetyBalloon.xib */; };
+		1881B9A616BA7EB200D3787C /* SCBalloonTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881B9A516BA7EB200D3787C /* SCBalloonTextView.m */; };
+		1881B9AF16BA9E7900D3787C /* GhostManager.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9AE16BA9E7900D3787C /* GhostManager.xib */; };
+		1881B9B116BAA43A00D3787C /* InstallDialog.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9B016BAA43A00D3787C /* InstallDialog.xib */; };
+		1881B9B316BAA54D00D3787C /* CommunicateBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9B216BAA54C00D3787C /* CommunicateBox.xib */; };
+		1881B9B516BAA63900D3787C /* UpdateChecker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9B416BAA63900D3787C /* UpdateChecker.xib */; };
+		1881B9B716BAA84200D3787C /* TeachBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9B616BAA84200D3787C /* TeachBox.xib */; };
+		1881B9B916BAA8CA00D3787C /* InputBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9B816BAA8CA00D3787C /* InputBox.xib */; };
+		1881B9BB16BAA92600D3787C /* Vanish.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9BA16BAA92500D3787C /* Vanish.xib */; };
+		1881B9BD16BAA9F600D3787C /* StatusWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9BC16BAA9F600D3787C /* StatusWindow.xib */; };
+		1881B9BF16BAAA1F00D3787C /* ShellWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1881B9BE16BAAA1F00D3787C /* ShellWindow.xib */; };
+		1881B9C216BAB26400D3787C /* SCSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881B9C116BAB26400D3787C /* SCSession.m */; };
+		1881E47017369BB5004E4E99 /* SCShellsListElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 1881E46F17369BB5004E4E99 /* SCShellsListElement.m */; };
+		188248D4171C51FD0003DE2A /* SCBalloonSkinServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 188248D3171C51FD0003DE2A /* SCBalloonSkinServer.m */; };
+		188248D7171C52150003DE2A /* SCBalloonSkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 188248D6171C52150003DE2A /* SCBalloonSkin.m */; };
+		18826085170C599D00F3342D /* SCSafetyBalloonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18826084170C599D00F3342D /* SCSafetyBalloonController.m */; };
+		18826088170C5A0900F3342D /* SCBorderlessWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 18826087170C5A0900F3342D /* SCBorderlessWindow.m */; };
+		18830F3D1705EC06008E6380 /* SCGhostsListsElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 18830F3C1705EC06008E6380 /* SCGhostsListsElement.m */; };
+		18832898170D59B30064E00B /* SCBalloonsListElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 18832897170D59B30064E00B /* SCBalloonsListElement.m */; };
+		1883289B170D5F620064E00B /* SCAlphaConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1883289A170D5F620064E00B /* SCAlphaConverter.m */; };
+		1883C38F170ED9750098CF36 /* SCShell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1883C38E170ED9750098CF36 /* SCShell.m */; };
+		18849E96170B2A9C00A8F1B0 /* SCShellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18849E95170B2A9C00A8F1B0 /* SCShellView.m */; };
+		18849E99170B2BF500A8F1B0 /* SCShellWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 18849E98170B2BF500A8F1B0 /* SCShellWindow.m */; };
+		18849E9C170B2C4500A8F1B0 /* SCShellWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18849E9B170B2C4500A8F1B0 /* SCShellWindowController.m */; };
+		1886FCB3171955CC00A3844E /* SCSeriko.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886FCB2171955CC00A3844E /* SCSeriko.m */; };
+		1886FCB617195AF900A3844E /* SCSerikoLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886FCB517195AF900A3844E /* SCSerikoLibrary.m */; };
+		1886FCB91719A3B900A3844E /* SCSpirit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886FCB81719A3B900A3844E /* SCSpirit.m */; };
+		1886FCBD1719AEB400A3844E /* SCScriptRunner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886FCBC1719AEB400A3844E /* SCScriptRunner.m */; };
+		1886FCC11719BC1900A3844E /* SCSurfaceServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886FCC01719BC1900A3844E /* SCSurfaceServer.m */; };
+		1886FCC41719C5B800A3844E /* SCSurface.m in Sources */ = {isa = PBXBuildFile; fileRef = 1886FCC31719C5B800A3844E /* SCSurface.m */; };
+		1887EEB81735466400F673A6 /* SCSurfaceDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 1887EEB71735466400F673A6 /* SCSurfaceDescription.m */; };
+		1888BCC016D25E6F0082F2A8 /* SCDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 1888BCBF16D25E6F0082F2A8 /* SCDescription.m */; };
+		189BCDE018E880B4005ED912 /* SCSafetyBalloonBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 189BCDDF18E880B4005ED912 /* SCSafetyBalloonBackgroundView.m */; };
+		18DDD41C16BE58AC0056DAA9 /* SCGhostManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDD41B16BE58AC0056DAA9 /* SCGhostManager.m */; };
+		18DDD41F16BE59B10056DAA9 /* SCGhostManagerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DDD41E16BE59B10056DAA9 /* SCGhostManagerWindowController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18EBBF541753A33200BF4ED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18EBBF501753A33100BF4ED5 /* Misaka.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 18EBBF3F1753A33100BF4ED5;
+			remoteInfo = Misaka;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		187E6C4216C14FEB000D917D /* SCGhostPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGhostPreviewView.h; sourceTree = "<group>"; };
+		187E6C4316C14FEB000D917D /* SCGhostPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGhostPreviewView.m; sourceTree = "<group>"; };
+		187E6C4516C15CC6000D917D /* SCInstalledGhostsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCInstalledGhostsList.h; sourceTree = "<group>"; };
+		187E6C4616C15CC6000D917D /* SCInstalledGhostsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCInstalledGhostsList.m; sourceTree = "<group>"; };
+		187E6C4816C15E6D000D917D /* SCInstalledBalloonsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCInstalledBalloonsList.h; sourceTree = "<group>"; };
+		187E6C4916C15E6D000D917D /* SCInstalledBalloonsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCInstalledBalloonsList.m; sourceTree = "<group>"; };
+		187E6C4B16C15E8F000D917D /* SCShellsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShellsList.h; sourceTree = "<group>"; };
+		187E6C4C16C15E90000D917D /* SCShellsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShellsList.m; sourceTree = "<group>"; };
+		187F835317103AD8007B1DB1 /* SCBlockedDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBlockedDescription.h; sourceTree = "<group>"; };
+		187F835417103AD8007B1DB1 /* SCBlockedDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBlockedDescription.m; sourceTree = "<group>"; };
+		187F8EDE16B6ABEA006FC337 /* NiseRingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NiseRingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		187F8EE216B6ABEA006FC337 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		187F8EE516B6ABEA006FC337 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		187F8EE616B6ABEA006FC337 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		187F8EE716B6ABEA006FC337 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		187F8EEA16B6ABEA006FC337 /* NiseRingo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NiseRingo-Info.plist"; sourceTree = "<group>"; };
+		187F8EEC16B6ABEA006FC337 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		187F8EEE16B6ABEA006FC337 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		187F8EF016B6ABEA006FC337 /* NiseRingo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NiseRingo-Prefix.pch"; sourceTree = "<group>"; };
+		187F8EF216B6ABEB006FC337 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		187F8EFB16B6ABEB006FC337 /* NiseRingo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NiseRingo.xcdatamodel; sourceTree = "<group>"; };
+		187F8F0816B6B58E006FC337 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		187F8F0916B6B58E006FC337 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		187F8F0B16B6B646006FC337 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		187F8F0E16B6CDAE006FC337 /* SCFoundation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFoundation.h; sourceTree = "<group>"; };
+		187F8F0F16B6CDAE006FC337 /* SCFoundation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFoundation.m; sourceTree = "<group>"; };
+		187F8F1116B6CE90006FC337 /* SCMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMenuController.h; sourceTree = "<group>"; };
+		187F8F1216B6CE91006FC337 /* SCMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMenuController.m; sourceTree = "<group>"; };
+		1880092F178DA12C002AC35E /* SCStatusBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCStatusBackgroundView.h; sourceTree = "<group>"; };
+		18800930178DA12C002AC35E /* SCStatusBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCStatusBackgroundView.m; sourceTree = "<group>"; };
+		18800932178DA65D002AC35E /* SCStatusTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCStatusTextView.h; sourceTree = "<group>"; };
+		18800933178DA65D002AC35E /* SCStatusTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCStatusTextView.m; sourceTree = "<group>"; };
+		18800935178DA672002AC35E /* SCStatusProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCStatusProgressBarView.h; sourceTree = "<group>"; };
+		18800936178DA672002AC35E /* SCStatusProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCStatusProgressBarView.m; sourceTree = "<group>"; };
+		18800938178DA72E002AC35E /* SCStatusWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCStatusWindow.h; sourceTree = "<group>"; };
+		18800939178DA72E002AC35E /* SCStatusWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCStatusWindow.m; sourceTree = "<group>"; };
+		1880093B178DA751002AC35E /* SCStatusWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCStatusWindowController.h; sourceTree = "<group>"; };
+		1880093C178DA751002AC35E /* SCStatusWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCStatusWindowController.m; sourceTree = "<group>"; };
+		18800C3B16B81B5B001CAB81 /* PrefWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrefWindow.xib; sourceTree = "<group>"; };
+		18800C3E16B82A06001CAB81 /* SCPrefWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCPrefWindowController.h; sourceTree = "<group>"; };
+		18800C3F16B82A06001CAB81 /* SCPrefWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCPrefWindowController.m; sourceTree = "<group>"; };
+		1881B9A116BA7DD900D3787C /* SafetyBalloon.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SafetyBalloon.xib; sourceTree = "<group>"; };
+		1881B9A416BA7EB200D3787C /* SCBalloonTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBalloonTextView.h; sourceTree = "<group>"; };
+		1881B9A516BA7EB200D3787C /* SCBalloonTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBalloonTextView.m; sourceTree = "<group>"; };
+		1881B9AE16BA9E7900D3787C /* GhostManager.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GhostManager.xib; sourceTree = "<group>"; };
+		1881B9B016BAA43A00D3787C /* InstallDialog.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstallDialog.xib; sourceTree = "<group>"; };
+		1881B9B216BAA54C00D3787C /* CommunicateBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunicateBox.xib; sourceTree = "<group>"; };
+		1881B9B416BAA63900D3787C /* UpdateChecker.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UpdateChecker.xib; sourceTree = "<group>"; };
+		1881B9B616BAA84200D3787C /* TeachBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeachBox.xib; sourceTree = "<group>"; };
+		1881B9B816BAA8CA00D3787C /* InputBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputBox.xib; sourceTree = "<group>"; };
+		1881B9BA16BAA92500D3787C /* Vanish.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Vanish.xib; sourceTree = "<group>"; };
+		1881B9BC16BAA9F600D3787C /* StatusWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusWindow.xib; sourceTree = "<group>"; };
+		1881B9BE16BAAA1F00D3787C /* ShellWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShellWindow.xib; sourceTree = "<group>"; };
+		1881B9C016BAB26400D3787C /* SCSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSession.h; sourceTree = "<group>"; };
+		1881B9C116BAB26400D3787C /* SCSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSession.m; sourceTree = "<group>"; };
+		1881E46E17369BB5004E4E99 /* SCShellsListElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShellsListElement.h; sourceTree = "<group>"; };
+		1881E46F17369BB5004E4E99 /* SCShellsListElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShellsListElement.m; sourceTree = "<group>"; };
+		188248D2171C51FD0003DE2A /* SCBalloonSkinServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBalloonSkinServer.h; sourceTree = "<group>"; };
+		188248D3171C51FD0003DE2A /* SCBalloonSkinServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBalloonSkinServer.m; sourceTree = "<group>"; };
+		188248D5171C52150003DE2A /* SCBalloonSkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBalloonSkin.h; sourceTree = "<group>"; };
+		188248D6171C52150003DE2A /* SCBalloonSkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBalloonSkin.m; sourceTree = "<group>"; };
+		18826083170C599D00F3342D /* SCSafetyBalloonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSafetyBalloonController.h; sourceTree = "<group>"; };
+		18826084170C599D00F3342D /* SCSafetyBalloonController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSafetyBalloonController.m; sourceTree = "<group>"; };
+		18826086170C5A0900F3342D /* SCBorderlessWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBorderlessWindow.h; sourceTree = "<group>"; };
+		18826087170C5A0900F3342D /* SCBorderlessWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBorderlessWindow.m; sourceTree = "<group>"; };
+		18830F3B1705EC06008E6380 /* SCGhostsListsElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGhostsListsElement.h; sourceTree = "<group>"; };
+		18830F3C1705EC06008E6380 /* SCGhostsListsElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGhostsListsElement.m; sourceTree = "<group>"; };
+		18832896170D59B30064E00B /* SCBalloonsListElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBalloonsListElement.h; sourceTree = "<group>"; };
+		18832897170D59B30064E00B /* SCBalloonsListElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBalloonsListElement.m; sourceTree = "<group>"; };
+		18832899170D5F620064E00B /* SCAlphaConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCAlphaConverter.h; sourceTree = "<group>"; };
+		1883289A170D5F620064E00B /* SCAlphaConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCAlphaConverter.m; sourceTree = "<group>"; };
+		1883C38D170ED9750098CF36 /* SCShell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShell.h; sourceTree = "<group>"; };
+		1883C38E170ED9750098CF36 /* SCShell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShell.m; sourceTree = "<group>"; };
+		18849E94170B2A9C00A8F1B0 /* SCShellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShellView.h; sourceTree = "<group>"; };
+		18849E95170B2A9C00A8F1B0 /* SCShellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShellView.m; sourceTree = "<group>"; };
+		18849E97170B2BF500A8F1B0 /* SCShellWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShellWindow.h; sourceTree = "<group>"; };
+		18849E98170B2BF500A8F1B0 /* SCShellWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShellWindow.m; sourceTree = "<group>"; };
+		18849E9A170B2C4500A8F1B0 /* SCShellWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShellWindowController.h; sourceTree = "<group>"; };
+		18849E9B170B2C4500A8F1B0 /* SCShellWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShellWindowController.m; sourceTree = "<group>"; };
+		1886FCB1171955CC00A3844E /* SCSeriko.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSeriko.h; sourceTree = "<group>"; };
+		1886FCB2171955CC00A3844E /* SCSeriko.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSeriko.m; sourceTree = "<group>"; };
+		1886FCB417195AF900A3844E /* SCSerikoLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSerikoLibrary.h; sourceTree = "<group>"; };
+		1886FCB517195AF900A3844E /* SCSerikoLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSerikoLibrary.m; sourceTree = "<group>"; };
+		1886FCB71719A3B900A3844E /* SCSpirit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSpirit.h; sourceTree = "<group>"; };
+		1886FCB81719A3B900A3844E /* SCSpirit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSpirit.m; sourceTree = "<group>"; };
+		1886FCBB1719AEB400A3844E /* SCScriptRunner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCScriptRunner.h; sourceTree = "<group>"; };
+		1886FCBC1719AEB400A3844E /* SCScriptRunner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCScriptRunner.m; sourceTree = "<group>"; };
+		1886FCBF1719BC1900A3844E /* SCSurfaceServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSurfaceServer.h; sourceTree = "<group>"; };
+		1886FCC01719BC1900A3844E /* SCSurfaceServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSurfaceServer.m; sourceTree = "<group>"; };
+		1886FCC21719C5B800A3844E /* SCSurface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSurface.h; sourceTree = "<group>"; };
+		1886FCC31719C5B800A3844E /* SCSurface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSurface.m; sourceTree = "<group>"; };
+		1887EEB61735466400F673A6 /* SCSurfaceDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSurfaceDescription.h; sourceTree = "<group>"; };
+		1887EEB71735466400F673A6 /* SCSurfaceDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSurfaceDescription.m; sourceTree = "<group>"; };
+		1888BCBE16D25E6F0082F2A8 /* SCDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCDescription.h; path = ../SCDescription.h; sourceTree = "<group>"; };
+		1888BCBF16D25E6F0082F2A8 /* SCDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCDescription.m; path = ../SCDescription.m; sourceTree = "<group>"; };
+		189BCDDE18E880B4005ED912 /* SCSafetyBalloonBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSafetyBalloonBackgroundView.h; sourceTree = "<group>"; };
+		189BCDDF18E880B4005ED912 /* SCSafetyBalloonBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSafetyBalloonBackgroundView.m; sourceTree = "<group>"; };
+		18DDD41A16BE58AC0056DAA9 /* SCGhostManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGhostManager.h; sourceTree = "<group>"; };
+		18DDD41B16BE58AC0056DAA9 /* SCGhostManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGhostManager.m; sourceTree = "<group>"; };
+		18DDD41D16BE59B10056DAA9 /* SCGhostManagerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCGhostManagerWindowController.h; sourceTree = "<group>"; };
+		18DDD41E16BE59B10056DAA9 /* SCGhostManagerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCGhostManagerWindowController.m; sourceTree = "<group>"; };
+		18EBBF501753A33100BF4ED5 /* Misaka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Misaka.xcodeproj; path = Misaka/Misaka.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		187F8EDB16B6ABEA006FC337 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187F8EE316B6ABEA006FC337 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		187F8ED316B6ABEA006FC337 = {
+			isa = PBXGroup;
+			children = (
+				18EBBF501753A33100BF4ED5 /* Misaka.xcodeproj */,
+				187F8EE816B6ABEA006FC337 /* NiseRingo */,
+				187F8EE116B6ABEA006FC337 /* Frameworks */,
+				187F8EDF16B6ABEA006FC337 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		187F8EDF16B6ABEA006FC337 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				187F8EDE16B6ABEA006FC337 /* NiseRingo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		187F8EE116B6ABEA006FC337 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				187F8EE216B6ABEA006FC337 /* Cocoa.framework */,
+				187F8EE416B6ABEA006FC337 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		187F8EE416B6ABEA006FC337 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				187F8EE516B6ABEA006FC337 /* AppKit.framework */,
+				187F8EE616B6ABEA006FC337 /* CoreData.framework */,
+				187F8EE716B6ABEA006FC337 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		187F8EE816B6ABEA006FC337 /* NiseRingo */ = {
+			isa = PBXGroup;
+			children = (
+				1880092D178DA0BD002AC35E /* Status Window */,
+				1887EEB51735461200F673A6 /* Description */,
+				1886FCBE1719BBE700A3844E /* Image Classes */,
+				1886FCBA1719AE9400A3844E /* Script Classes */,
+				1886FCB0171955B100A3844E /* SCSeriko */,
+				18826082170C596400F3342D /* Balloon Window Classes */,
+				18849E9D170B2DFD00A8F1B0 /* Session */,
+				18849E93170B2A7A00A8F1B0 /* Shell Window Classes */,
+				1881A2D816CE303800863D10 /* Ghost Manager */,
+				187F8EFA16B6ABEB006FC337 /* NiseRingo.xcdatamodeld */,
+				187F8F0216B6AC7F006FC337 /* Resources */,
+				187F8EE916B6ABEA006FC337 /* Supporting Files */,
+				187F8F0E16B6CDAE006FC337 /* SCFoundation.h */,
+				187F8F0F16B6CDAE006FC337 /* SCFoundation.m */,
+				187F8F1116B6CE90006FC337 /* SCMenuController.h */,
+				187F8F1216B6CE91006FC337 /* SCMenuController.m */,
+				18800C3E16B82A06001CAB81 /* SCPrefWindowController.h */,
+				18800C3F16B82A06001CAB81 /* SCPrefWindowController.m */,
+				18832899170D5F620064E00B /* SCAlphaConverter.h */,
+				1883289A170D5F620064E00B /* SCAlphaConverter.m */,
+			);
+			path = NiseRingo;
+			sourceTree = "<group>";
+		};
+		187F8EE916B6ABEA006FC337 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				187F8EEA16B6ABEA006FC337 /* NiseRingo-Info.plist */,
+				187F8EEB16B6ABEA006FC337 /* InfoPlist.strings */,
+				187F8EEE16B6ABEA006FC337 /* main.m */,
+				187F8EF016B6ABEA006FC337 /* NiseRingo-Prefix.pch */,
+				187F8EF116B6ABEB006FC337 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		187F8F0216B6AC7F006FC337 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				187F8F0C16B6B646006FC337 /* MainMenu.xib */,
+				18800C3B16B81B5B001CAB81 /* PrefWindow.xib */,
+				1881B9A116BA7DD900D3787C /* SafetyBalloon.xib */,
+				1881B9AE16BA9E7900D3787C /* GhostManager.xib */,
+				1881B9B016BAA43A00D3787C /* InstallDialog.xib */,
+				1881B9B216BAA54C00D3787C /* CommunicateBox.xib */,
+				1881B9B416BAA63900D3787C /* UpdateChecker.xib */,
+				1881B9B616BAA84200D3787C /* TeachBox.xib */,
+				1881B9B816BAA8CA00D3787C /* InputBox.xib */,
+				1881B9BA16BAA92500D3787C /* Vanish.xib */,
+				1881B9BC16BAA9F600D3787C /* StatusWindow.xib */,
+				1881B9BE16BAAA1F00D3787C /* ShellWindow.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1880092D178DA0BD002AC35E /* Status Window */ = {
+			isa = PBXGroup;
+			children = (
+				1880092F178DA12C002AC35E /* SCStatusBackgroundView.h */,
+				18800930178DA12C002AC35E /* SCStatusBackgroundView.m */,
+				18800932178DA65D002AC35E /* SCStatusTextView.h */,
+				18800933178DA65D002AC35E /* SCStatusTextView.m */,
+				18800935178DA672002AC35E /* SCStatusProgressBarView.h */,
+				18800936178DA672002AC35E /* SCStatusProgressBarView.m */,
+				18800938178DA72E002AC35E /* SCStatusWindow.h */,
+				18800939178DA72E002AC35E /* SCStatusWindow.m */,
+				1880093B178DA751002AC35E /* SCStatusWindowController.h */,
+				1880093C178DA751002AC35E /* SCStatusWindowController.m */,
+			);
+			name = "Status Window";
+			sourceTree = "<group>";
+		};
+		1881A2D816CE303800863D10 /* Ghost Manager */ = {
+			isa = PBXGroup;
+			children = (
+				187E6C4216C14FEB000D917D /* SCGhostPreviewView.h */,
+				187E6C4316C14FEB000D917D /* SCGhostPreviewView.m */,
+				18DDD41A16BE58AC0056DAA9 /* SCGhostManager.h */,
+				18DDD41B16BE58AC0056DAA9 /* SCGhostManager.m */,
+				187E6C4B16C15E8F000D917D /* SCShellsList.h */,
+				187E6C4C16C15E90000D917D /* SCShellsList.m */,
+				187E6C4816C15E6D000D917D /* SCInstalledBalloonsList.h */,
+				187E6C4916C15E6D000D917D /* SCInstalledBalloonsList.m */,
+				187E6C4516C15CC6000D917D /* SCInstalledGhostsList.h */,
+				187E6C4616C15CC6000D917D /* SCInstalledGhostsList.m */,
+				18DDD41D16BE59B10056DAA9 /* SCGhostManagerWindowController.h */,
+				18DDD41E16BE59B10056DAA9 /* SCGhostManagerWindowController.m */,
+				18830F3B1705EC06008E6380 /* SCGhostsListsElement.h */,
+				18830F3C1705EC06008E6380 /* SCGhostsListsElement.m */,
+				18832896170D59B30064E00B /* SCBalloonsListElement.h */,
+				18832897170D59B30064E00B /* SCBalloonsListElement.m */,
+				1881E46E17369BB5004E4E99 /* SCShellsListElement.h */,
+				1881E46F17369BB5004E4E99 /* SCShellsListElement.m */,
+			);
+			name = "Ghost Manager";
+			sourceTree = "<group>";
+		};
+		18826082170C596400F3342D /* Balloon Window Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1881B9A416BA7EB200D3787C /* SCBalloonTextView.h */,
+				1881B9A516BA7EB200D3787C /* SCBalloonTextView.m */,
+				18826083170C599D00F3342D /* SCSafetyBalloonController.h */,
+				18826084170C599D00F3342D /* SCSafetyBalloonController.m */,
+				18826086170C5A0900F3342D /* SCBorderlessWindow.h */,
+				18826087170C5A0900F3342D /* SCBorderlessWindow.m */,
+				189BCDDE18E880B4005ED912 /* SCSafetyBalloonBackgroundView.h */,
+				189BCDDF18E880B4005ED912 /* SCSafetyBalloonBackgroundView.m */,
+			);
+			name = "Balloon Window Classes";
+			sourceTree = "<group>";
+		};
+		18849E93170B2A7A00A8F1B0 /* Shell Window Classes */ = {
+			isa = PBXGroup;
+			children = (
+				18849E94170B2A9C00A8F1B0 /* SCShellView.h */,
+				18849E95170B2A9C00A8F1B0 /* SCShellView.m */,
+				18849E97170B2BF500A8F1B0 /* SCShellWindow.h */,
+				18849E98170B2BF500A8F1B0 /* SCShellWindow.m */,
+				18849E9A170B2C4500A8F1B0 /* SCShellWindowController.h */,
+				18849E9B170B2C4500A8F1B0 /* SCShellWindowController.m */,
+			);
+			name = "Shell Window Classes";
+			sourceTree = "<group>";
+		};
+		18849E9D170B2DFD00A8F1B0 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				1881B9C016BAB26400D3787C /* SCSession.h */,
+				1881B9C116BAB26400D3787C /* SCSession.m */,
+				1883C38D170ED9750098CF36 /* SCShell.h */,
+				1883C38E170ED9750098CF36 /* SCShell.m */,
+				1886FCB71719A3B900A3844E /* SCSpirit.h */,
+				1886FCB81719A3B900A3844E /* SCSpirit.m */,
+			);
+			name = Session;
+			sourceTree = "<group>";
+		};
+		1886FCB0171955B100A3844E /* SCSeriko */ = {
+			isa = PBXGroup;
+			children = (
+				1886FCB1171955CC00A3844E /* SCSeriko.h */,
+				1886FCB2171955CC00A3844E /* SCSeriko.m */,
+				1886FCB417195AF900A3844E /* SCSerikoLibrary.h */,
+				1886FCB517195AF900A3844E /* SCSerikoLibrary.m */,
+			);
+			name = SCSeriko;
+			sourceTree = "<group>";
+		};
+		1886FCBA1719AE9400A3844E /* Script Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1886FCBB1719AEB400A3844E /* SCScriptRunner.h */,
+				1886FCBC1719AEB400A3844E /* SCScriptRunner.m */,
+			);
+			name = "Script Classes";
+			sourceTree = "<group>";
+		};
+		1886FCBE1719BBE700A3844E /* Image Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1886FCBF1719BC1900A3844E /* SCSurfaceServer.h */,
+				1886FCC01719BC1900A3844E /* SCSurfaceServer.m */,
+				1886FCC21719C5B800A3844E /* SCSurface.h */,
+				1886FCC31719C5B800A3844E /* SCSurface.m */,
+				188248D2171C51FD0003DE2A /* SCBalloonSkinServer.h */,
+				188248D3171C51FD0003DE2A /* SCBalloonSkinServer.m */,
+				188248D5171C52150003DE2A /* SCBalloonSkin.h */,
+				188248D6171C52150003DE2A /* SCBalloonSkin.m */,
+			);
+			name = "Image Classes";
+			sourceTree = "<group>";
+		};
+		1887EEB51735461200F673A6 /* Description */ = {
+			isa = PBXGroup;
+			children = (
+				1888BCBE16D25E6F0082F2A8 /* SCDescription.h */,
+				1888BCBF16D25E6F0082F2A8 /* SCDescription.m */,
+				187F835317103AD8007B1DB1 /* SCBlockedDescription.h */,
+				187F835417103AD8007B1DB1 /* SCBlockedDescription.m */,
+				1887EEB61735466400F673A6 /* SCSurfaceDescription.h */,
+				1887EEB71735466400F673A6 /* SCSurfaceDescription.m */,
+			);
+			name = Description;
+			sourceTree = "<group>";
+		};
+		18EBBF511753A33100BF4ED5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18EBBF551753A33200BF4ED5 /* Misaka.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		187F8EDD16B6ABEA006FC337 /* NiseRingo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 187F8EFF16B6ABEB006FC337 /* Build configuration list for PBXNativeTarget "NiseRingo" */;
+			buildPhases = (
+				187F8EDA16B6ABEA006FC337 /* Sources */,
+				187F8EDB16B6ABEA006FC337 /* Frameworks */,
+				187F8EDC16B6ABEA006FC337 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NiseRingo;
+			productName = NiseRingo;
+			productReference = 187F8EDE16B6ABEA006FC337 /* NiseRingo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		187F8ED516B6ABEA006FC337 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SC;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = apple;
+			};
+			buildConfigurationList = 187F8ED816B6ABEA006FC337 /* Build configuration list for PBXProject "NiseRingo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				"zh-Hans",
+			);
+			mainGroup = 187F8ED316B6ABEA006FC337;
+			productRefGroup = 187F8EDF16B6ABEA006FC337 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 18EBBF511753A33100BF4ED5 /* Products */;
+					ProjectRef = 18EBBF501753A33100BF4ED5 /* Misaka.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				187F8EDD16B6ABEA006FC337 /* NiseRingo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		18EBBF551753A33200BF4ED5 /* Misaka.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Misaka.bundle;
+			remoteRef = 18EBBF541753A33200BF4ED5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		187F8EDC16B6ABEA006FC337 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187F8EED16B6ABEA006FC337 /* InfoPlist.strings in Resources */,
+				187F8EF316B6ABEB006FC337 /* Credits.rtf in Resources */,
+				187F8F0A16B6B646006FC337 /* MainMenu.xib in Resources */,
+				18800C3C16B81B5B001CAB81 /* PrefWindow.xib in Resources */,
+				1881B9A216BA7DD900D3787C /* SafetyBalloon.xib in Resources */,
+				1881B9AF16BA9E7900D3787C /* GhostManager.xib in Resources */,
+				1881B9B116BAA43A00D3787C /* InstallDialog.xib in Resources */,
+				1881B9B316BAA54D00D3787C /* CommunicateBox.xib in Resources */,
+				1881B9B516BAA63900D3787C /* UpdateChecker.xib in Resources */,
+				1881B9B716BAA84200D3787C /* TeachBox.xib in Resources */,
+				1881B9B916BAA8CA00D3787C /* InputBox.xib in Resources */,
+				1881B9BB16BAA92600D3787C /* Vanish.xib in Resources */,
+				1881B9BD16BAA9F600D3787C /* StatusWindow.xib in Resources */,
+				1881B9BF16BAAA1F00D3787C /* ShellWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		187F8EDA16B6ABEA006FC337 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				187F8EEF16B6ABEA006FC337 /* main.m in Sources */,
+				187F8EFC16B6ABEB006FC337 /* NiseRingo.xcdatamodeld in Sources */,
+				187F8F1016B6CDAE006FC337 /* SCFoundation.m in Sources */,
+				187F8F1316B6CE91006FC337 /* SCMenuController.m in Sources */,
+				18800C4016B82A06001CAB81 /* SCPrefWindowController.m in Sources */,
+				1881B9A616BA7EB200D3787C /* SCBalloonTextView.m in Sources */,
+				1881B9C216BAB26400D3787C /* SCSession.m in Sources */,
+				18DDD41C16BE58AC0056DAA9 /* SCGhostManager.m in Sources */,
+				18DDD41F16BE59B10056DAA9 /* SCGhostManagerWindowController.m in Sources */,
+				187E6C4416C14FEB000D917D /* SCGhostPreviewView.m in Sources */,
+				187E6C4716C15CC6000D917D /* SCInstalledGhostsList.m in Sources */,
+				187E6C4A16C15E6D000D917D /* SCInstalledBalloonsList.m in Sources */,
+				187E6C4D16C15E90000D917D /* SCShellsList.m in Sources */,
+				1888BCC016D25E6F0082F2A8 /* SCDescription.m in Sources */,
+				18830F3D1705EC06008E6380 /* SCGhostsListsElement.m in Sources */,
+				18849E96170B2A9C00A8F1B0 /* SCShellView.m in Sources */,
+				18849E99170B2BF500A8F1B0 /* SCShellWindow.m in Sources */,
+				18849E9C170B2C4500A8F1B0 /* SCShellWindowController.m in Sources */,
+				18826085170C599D00F3342D /* SCSafetyBalloonController.m in Sources */,
+				18826088170C5A0900F3342D /* SCBorderlessWindow.m in Sources */,
+				18832898170D59B30064E00B /* SCBalloonsListElement.m in Sources */,
+				1883289B170D5F620064E00B /* SCAlphaConverter.m in Sources */,
+				1883C38F170ED9750098CF36 /* SCShell.m in Sources */,
+				187F835517103AD8007B1DB1 /* SCBlockedDescription.m in Sources */,
+				1886FCB3171955CC00A3844E /* SCSeriko.m in Sources */,
+				1886FCB617195AF900A3844E /* SCSerikoLibrary.m in Sources */,
+				1886FCB91719A3B900A3844E /* SCSpirit.m in Sources */,
+				1886FCBD1719AEB400A3844E /* SCScriptRunner.m in Sources */,
+				1886FCC11719BC1900A3844E /* SCSurfaceServer.m in Sources */,
+				1886FCC41719C5B800A3844E /* SCSurface.m in Sources */,
+				188248D4171C51FD0003DE2A /* SCBalloonSkinServer.m in Sources */,
+				188248D7171C52150003DE2A /* SCBalloonSkin.m in Sources */,
+				1887EEB81735466400F673A6 /* SCSurfaceDescription.m in Sources */,
+				1881E47017369BB5004E4E99 /* SCShellsListElement.m in Sources */,
+				18800931178DA12C002AC35E /* SCStatusBackgroundView.m in Sources */,
+				18800934178DA65D002AC35E /* SCStatusTextView.m in Sources */,
+				18800937178DA672002AC35E /* SCStatusProgressBarView.m in Sources */,
+				1880093A178DA72E002AC35E /* SCStatusWindow.m in Sources */,
+				189BCDE018E880B4005ED912 /* SCSafetyBalloonBackgroundView.m in Sources */,
+				1880093D178DA751002AC35E /* SCStatusWindowController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		187F8EEB16B6ABEA006FC337 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				187F8EEC16B6ABEA006FC337 /* en */,
+				187F8F0816B6B58E006FC337 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		187F8EF116B6ABEB006FC337 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				187F8EF216B6ABEB006FC337 /* en */,
+				187F8F0916B6B58E006FC337 /* zh-Hans */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		187F8F0C16B6B646006FC337 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				187F8F0B16B6B646006FC337 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		187F8EFD16B6ABEB006FC337 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		187F8EFE16B6ABEB006FC337 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		187F8F0016B6ABEB006FC337 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NiseRingo/NiseRingo-Prefix.pch";
+				INFOPLIST_FILE = "NiseRingo/NiseRingo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.niseringo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		187F8F0116B6ABEB006FC337 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "NiseRingo/NiseRingo-Prefix.pch";
+				INFOPLIST_FILE = "NiseRingo/NiseRingo-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.niseringo.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		187F8ED816B6ABEA006FC337 /* Build configuration list for PBXProject "NiseRingo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				187F8EFD16B6ABEB006FC337 /* Debug */,
+				187F8EFE16B6ABEB006FC337 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		187F8EFF16B6ABEB006FC337 /* Build configuration list for PBXNativeTarget "NiseRingo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				187F8F0016B6ABEB006FC337 /* Debug */,
+				187F8F0116B6ABEB006FC337 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		187F8EFA16B6ABEB006FC337 /* NiseRingo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				187F8EFB16B6ABEB006FC337 /* NiseRingo.xcdatamodel */,
+			);
+			currentVersion = 187F8EFB16B6ABEB006FC337 /* NiseRingo.xcdatamodel */;
+			path = NiseRingo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 187F8ED516B6ABEA006FC337 /* Project object */;
+}

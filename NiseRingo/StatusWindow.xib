@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1070" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="SCStatusWindowController">
+            <connections>
+                <outlet property="view_pbar_view" destination="12" id="24"/>
+                <outlet property="view_text_textview" destination="18" id="23"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" animationBehavior="default" id="1" customClass="SCStatusWindow">
+            <windowStyleMask key="styleMask" titled="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="166" height="90"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <view key="contentView" id="2">
+                <rect key="frame" x="0.0" y="0.0" width="166" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </view>
+        </window>
+        <customView id="11" userLabel="TextType">
+            <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="13" customClass="SCStatusBackgroundView">
+                    <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <subviews>
+                        <customView translatesAutoresizingMaskIntoConstraints="NO" id="18" customClass="SCStatusTextView">
+                            <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        </customView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="18" firstAttribute="top" secondItem="13" secondAttribute="top" id="19"/>
+                        <constraint firstItem="18" firstAttribute="bottom" secondItem="13" secondAttribute="bottom" id="20"/>
+                        <constraint firstItem="18" firstAttribute="leading" secondItem="13" secondAttribute="leading" id="21"/>
+                        <constraint firstItem="18" firstAttribute="trailing" secondItem="13" secondAttribute="trailing" id="22"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="13" firstAttribute="trailing" secondItem="11" secondAttribute="trailing" id="14"/>
+                <constraint firstItem="13" firstAttribute="top" secondItem="11" secondAttribute="top" id="15"/>
+                <constraint firstItem="13" firstAttribute="leading" secondItem="11" secondAttribute="leading" id="16"/>
+                <constraint firstItem="13" firstAttribute="bottom" secondItem="11" secondAttribute="bottom" id="17"/>
+            </constraints>
+        </customView>
+        <customView id="12" customClass="SCStatusProgressBarView">
+            <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+        </customView>
+    </objects>
+</document>
