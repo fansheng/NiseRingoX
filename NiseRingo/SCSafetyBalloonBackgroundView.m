@@ -11,7 +11,7 @@
 @implementation SCSafetyBalloonBackgroundView
 @synthesize buffer;
 
-- (id)initWithFrame:(NSRect)frame
+- (instancetype)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -31,7 +31,7 @@
         [buffer lockFocus];
         [[NSColor clearColor] set];
         [[NSColor redColor] set];
-        [NSBezierPath fillRect:[self frame]];
+        [NSBezierPath fillRect:self.frame];
         [buffer unlockFocus];
         bufIsDirty=NO;
     }

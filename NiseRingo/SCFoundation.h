@@ -16,8 +16,8 @@
 +(SCFoundation*)sharedFoundation;
 -(void)performQuit;
 -(void)runSCAppQuitter;
--(NSString*)getParentDirOfBundle;
--(SCSession*)getSession;
+@property (NS_NONATOMIC_IOSONLY, getter=getParentDirOfBundle, readonly, copy) NSString *parentDirOfBundle;
+@property (NS_NONATOMIC_IOSONLY, getter=getSession, readonly, strong) SCSession *session;
 -(SCSession*)getSessionByPath:(NSString*)ghostPath;
 -(SCSession*)openSessionByGhostPath:(NSString*)ghostPath
                       ByBalloonPath:(NSString*)balloonPath

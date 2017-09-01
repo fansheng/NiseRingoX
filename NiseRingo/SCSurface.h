@@ -13,16 +13,16 @@
  サーフィスはpngデータ、〜s.txt、〜a.datファイルを持ちます。
  */
 @interface SCSurface : NSObject{
-    NSImage *rawImage; // ここがnullの時は圧縮されたNSImageがcompressedImageに入っている。
+    NSImage *__weak rawImage; // ここがnullの時は圧縮されたNSImageがcompressedImageに入っている。
     NSData *compressedImage;
     int surfaceID;
 }
-@property (assign) NSImage *rawImage;
+@property (weak) NSImage *rawImage;
 @property (assign) int surfaceID;
 
--(id)initWithFile:(NSString*)f
+-(instancetype)initWithFile:(NSString*)f
         surfaceID:(int)surfaceID
-      Description:(SCBlockedDescription*)comprehensiveDefinitions;
+      Description:(SCBlockedDescription*)comprehensiveDefinitions NS_DESIGNATED_INITIALIZER;
 
 
 @end

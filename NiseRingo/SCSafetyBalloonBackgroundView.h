@@ -12,6 +12,6 @@
     NSImage *buffer;
     BOOL bufIsDirty;
 }
-@property (assign) NSImage *buffer;
+@property  NSImage *buffer;
 
 @end

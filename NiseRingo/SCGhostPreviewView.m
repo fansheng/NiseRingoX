@@ -12,7 +12,7 @@
 @implementation SCGhostPreviewView
 @synthesize messageBGColor;
 
-- (id)initWithFrame:(NSRect)frame
+- (instancetype)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -34,16 +34,16 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     // Drawing code here.
-    float widthOfView = [self frame].size.width;
-    float heightOfView = [self frame].size.height;
+    float widthOfView = self.frame.size.width;
+    float heightOfView = self.frame.size.height;
 	
 	// 縦横比を保ったまま背景画像を拡大/縮小する。
 	// 縦か横のどちらかがViewの縦または横と合っていれば良い。
 	// 背景画像は常にView全体を覆う。
 	float ratio;
 	float widthOfBG,heightOfBG;
-    float orig_widthOfBG = [background size].width; 
-    float orig_heightOfBG = [background size].height;
+    float orig_widthOfBG = background.size.width; 
+    float orig_heightOfBG = background.size.height;
 	// まずは横を合わせる。
 	ratio = widthOfView / orig_widthOfBG;
 	widthOfBG = (int)(orig_widthOfBG * ratio);
@@ -54,9 +54,9 @@
 	    heightOfBG = (int)(orig_heightOfBG * ratio);
 	}
 	NSSize newSize={widthOfBG,heightOfBG};
-	if (ratio > 1.0) [background setSize:newSize];
-	NSImageRep *rep = (NSImageRep*)[[background representations] objectAtIndex:0];
-	[rep setSize:newSize];
+	if (ratio > 1.0) background.size = newSize;
+	NSImageRep *rep = (NSImageRep*)background.representations[0];
+	rep.size = newSize;
 	
 	// 右下に合わせて描画する。
 	NSRect rectToComposite = NSMakeRect(widthOfBG - widthOfView,0,widthOfView,heightOfView);
@@ -79,7 +79,7 @@
             message = @"Missing surface both of id 0 and id 10.";
 	    }
 	    if (message != nil) {
-            NSRange wholeRange = NSMakeRange(0,[message length]);
+            NSRange wholeRange = NSMakeRange(0,message.length);
             NSMutableAttributedString *astr = [[NSMutableAttributedString alloc] initWithString:message];
             [astr addAttribute:NSFontAttributeName value:messageFont range:wholeRange];
             [astr addAttribute:NSForegroundColorAttributeName value:messageColor range:wholeRange];
@@ -102,10 +102,10 @@
 
 	    double shell_ratio;
 	    float widthOfSakura,heightOfSakura,widthOfKero,heightOfKero;
-        float orig_widthOfSakura = [sakura size].width;
-        float orig_heightOfSakura = [sakura size].height;
-        float orig_widthOfKero = [kero size].width;
-        float orig_heightOfKero = [kero size].height;
+        float orig_widthOfSakura = sakura.size.width;
+        float orig_heightOfSakura = sakura.size.height;
+        float orig_widthOfKero = kero.size.width;
+        float orig_heightOfKero = kero.size.height;
 	    // まずは横に合わせる
 	    shell_ratio = widthOfView / (orig_widthOfSakura + orig_widthOfKero);
 	    widthOfSakura = (int)(orig_widthOfSakura * shell_ratio);
@@ -123,12 +123,12 @@
 	    NSSize newShellSize;
 	    // sakura
 	    newShellSize = NSMakeSize(widthOfSakura,heightOfSakura);
-	    if (shell_ratio > 1.0) [sakura setSize:newShellSize];
-	    [((NSImageRep*)[[sakura representations] objectAtIndex:0]) setSize:newShellSize];
+	    if (shell_ratio > 1.0) sakura.size = newShellSize;
+	    ((NSImageRep*)sakura.representations[0]).size = newShellSize;
 	    // kero
 	    newShellSize = NSMakeSize(widthOfKero,heightOfKero);
-	    if (shell_ratio > 1.0) [kero setSize:newShellSize];
-	    [((NSImageRep*)[[kero representations] objectAtIndex:0]) setSize:newShellSize];
+	    if (shell_ratio > 1.0) kero.size = newShellSize;
+	    ((NSImageRep*)kero.representations[0]).size = newShellSize;
 	    
         //[sakura compositeToPoint:NSZeroPoint operation:NSCompositeSourceOver];
         [sakura drawAtPoint:NSZeroPoint fromRect:rectToComposite operation:NSCompositeSourceOver fraction:1.0f];
@@ -195,7 +195,7 @@
 	NSImage *image = [SCAlphaConverter convertImage:[[NSImage alloc] initByReferencingFile:pngFile]];
 	
 	// pnaが存在するか？
-	NSString *pnaFile = [[pngFile stringByDeletingPathExtension] stringByAppendingPathExtension:@"pna"];
+	NSString *pnaFile = [pngFile.stringByDeletingPathExtension stringByAppendingPathExtension:@"pna"];
     NSFileManager *sharedFM = [NSFileManager defaultManager];
     if ([sharedFM fileExistsAtPath:pnaFile]){
 	    // pnaをロードしてアルファチャンネルにコピー

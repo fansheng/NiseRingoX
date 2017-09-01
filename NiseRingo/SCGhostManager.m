@@ -26,7 +26,7 @@
     return sharedInstance;
 }
 
--(id)init{
+-(instancetype)init{
     self=[super init];
     if (self) {
         //windowController = [[SCGhostManagerWindowController alloc] initWithSCGhostManager:self];
@@ -51,7 +51,7 @@
 -(void)reloadinstalledGhostList{
     [installedGhostList removeAllObjects];
     
-    NSString *bundleDir=[[SCFoundation sharedFoundation] getParentDirOfBundle];
+    NSString *bundleDir=[SCFoundation sharedFoundation].parentDirOfBundle;
     NSString *ghostDir=[bundleDir stringByAppendingPathComponent:@"home/ghost"];
     
     NSLog(@"%@",bundleDir);
@@ -60,7 +60,7 @@
     BOOL isDir;
     if ([sharedFM fileExistsAtPath:ghostDir isDirectory:&isDir] && isDir) {
         NSDirectoryEnumerator *dirEnumerator = [sharedFM enumeratorAtURL:[NSURL URLWithString:ghostDir]
-                                              includingPropertiesForKeys:[NSArray arrayWithObjects:NSURLNameKey,NSURLIsDirectoryKey,nil]
+                                              includingPropertiesForKeys:@[NSURLNameKey,NSURLIsDirectoryKey]
                                                                  options:NSDirectoryEnumerationSkipsSubdirectoryDescendants|NSDirectoryEnumerationSkipsHiddenFiles
                                                             errorHandler:nil];
         
@@ -77,7 +77,7 @@
             [theURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:NULL];
             
             // Ignore files under the _extras directory
-            if ([isDirectory boolValue]==YES)
+            if (isDirectory.boolValue==YES)
             {
                 NSString *path_from_home = [[NSString alloc] initWithFormat:@"home/ghost/%@",fileName];
                 NSLog(@"%@",path_from_home);
@@ -85,18 +85,18 @@
                 // process the document
                 NSDictionary *ghostDefaults = [self ghostDefaults:path_from_home];
                 
-                id boot_flag_entry = [ghostDefaults objectForKey:@"boot_flag"];
+                id boot_flag_entry = ghostDefaults[@"boot_flag"];
                 BOOL boot_flag =
                 (boot_flag_entry != nil &&
                  ([boot_flag_entry integerValue] == 1 ? YES : NO ));
                 
-                NSString *balloon = (NSString*)[ghostDefaults objectForKey:@"balloon"];
+                NSString *balloon = (NSString*)ghostDefaults[@"balloon"];
                 if (balloon == nil) balloon = @"";
                 
-                id scale_entry = [ghostDefaults objectForKey:@"scale"];
+                id scale_entry = ghostDefaults[@"scale"];
                 NSInteger scale = (scale_entry == nil ? 1.0 : [scale_entry integerValue]);
                 
-                NSString *shell_dirname = (NSString*)[ghostDefaults objectForKey:@"shell_dirname"];
+                NSString *shell_dirname = (NSString*)ghostDefaults[@"shell_dirname"];
                 if (shell_dirname == nil) shell_dirname = @"master";
                 SCGhostsListsElement *le=[[SCGhostsListsElement alloc] initWithBootFlag: boot_flag Path:path_from_home BalloonPath:balloon ShellDirname:shell_dirname Scale:scale];
                 [installedGhostList addObject:le];

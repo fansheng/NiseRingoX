@@ -16,7 +16,7 @@
     NSColor *messageColor;
     NSColor *messageBGColor;
 }
-@property (retain) NSColor *messageBGColor;
+@property (strong) NSColor *messageBGColor;
 
 -(void)setImage:(NSString *)shell_dir;
 -(void)setImage:(NSString *)pngFile

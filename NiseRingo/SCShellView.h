@@ -9,10 +9,10 @@
 #import <Cocoa/Cocoa.h>
 
 @interface SCShellView : NSView{
-    NSImage *base;
+    NSImage *__weak base;
     NSPoint p;
 }
-@property (assign) NSImage *base;
+@property (weak) NSImage *base;
 
 -(void)changeSurface:(NSImage *)img;
 

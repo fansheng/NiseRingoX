@@ -12,7 +12,7 @@
     NSMutableDictionary* table;
 }
 
--(id)initWithFilename:(NSString*) filename;
+-(instancetype)initWithFilename:(NSString*) filename NS_DESIGNATED_INITIALIZER;
 -(void)load:(NSString*) filename;
 -(NSString*)getStrValue:(NSString*)key;
 

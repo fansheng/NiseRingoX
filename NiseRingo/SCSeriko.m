@@ -9,7 +9,7 @@
 #import "SCSeriko.h"
 
 @implementation SCSeriko
--(id)initWithShell:(SCShell *)argShell{
+-(instancetype)initWithShell:(SCShell *)argShell{
     self = [super init];
     if (self) {
         shell=argShell;

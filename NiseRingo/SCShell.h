@@ -26,12 +26,12 @@
     NSString *selfname;
     NSString *keroname;
 }
-@property (retain) SCDescription *descManager;
-@property (retain) SCBlockedDescription *surfaceDescriptions;
-@property (retain) SCSurfaceServer *surfserver;
+@property (strong) SCDescription *descManager;
+@property (strong) SCBlockedDescription *surfaceDescriptions;
+@property (strong) SCSurfaceServer *surfserver;
 @property (readwrite,copy) NSString *shellRootDir;
 
--(id)initWithSession:(SCSession*)argSession
-             Dirname:(NSString*)dirname;
+-(instancetype)initWithSession:(SCSession*)argSession
+             Dirname:(NSString*)dirname NS_DESIGNATED_INITIALIZER;
 
 @end

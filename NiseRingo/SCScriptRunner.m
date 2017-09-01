@@ -20,7 +20,7 @@
     SCSafetyBalloonController* balloon=[[SCSafetyBalloonController alloc] init];
     [balloon showWindow:self];
     
-    NSUInteger len=[script length];
+    NSUInteger len=script.length;
     NSUInteger index=0;
     while (len>index) {
         unichar firstChar=[script characterAtIndex:index];
@@ -71,7 +71,7 @@
 }
 
 -(NSUInteger)doSurfaceChanging:(NSString *)str ByIndex:(NSUInteger)index{
-    NSUInteger len=[str length];
+    NSUInteger len=str.length;
     if (index+2<len) {
         if ([str characterAtIndex:index]=='[') {
             NSRange range=[str rangeOfString:@"]"];

@@ -15,8 +15,8 @@
 }
 @property (readwrite,copy)NSString* name;
 @property (readwrite,copy)NSString* path;
-@property (readwrite,retain)NSImage* thumbnail;
+@property (readwrite,strong)NSImage* thumbnail;
 
--(id)initWithPath:(NSString *)path;
+-(instancetype)initWithPath:(NSString *)path;
 
 @end

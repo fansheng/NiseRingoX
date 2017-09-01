@@ -17,37 +17,37 @@
 }
 
 //root
-@property (assign) IBOutlet NSTableView *tableInstalled;
-@property (assign) IBOutlet NSTabView *tabviewInfo;
-@property (assign) IBOutlet NSTextField *findBox;
-@property (assign) IBOutlet NSButton *btn_thumb_view;
-@property (assign) IBOutlet NSDrawer *drawer_thumbnail;
+@property (weak) IBOutlet NSTableView *tableInstalled;
+@property (weak) IBOutlet NSTabView *tabviewInfo;
+@property (weak) IBOutlet NSTextField *findBox;
+@property (weak) IBOutlet NSButton *btn_thumb_view;
+@property (weak) IBOutlet NSDrawer *drawer_thumbnail;
 
 //tab CONTROL/PREVIEW
-@property (assign) IBOutlet SCGhostPreviewView *previewView;
-@property (assign) IBOutlet NSTextField *scaleIndicator;
-@property (assign) IBOutlet NSSlider *scaleSlider;
-@property (assign) IBOutlet NSButton *btn_networkupdate;
-@property (assign) IBOutlet NSButton *btn_tate_kesi;
-@property (assign) IBOutlet NSButton *btn_vanish;
+@property (weak) IBOutlet SCGhostPreviewView *previewView;
+@property (weak) IBOutlet NSTextField *scaleIndicator;
+@property (weak) IBOutlet NSSlider *scaleSlider;
+@property (weak) IBOutlet NSButton *btn_networkupdate;
+@property (weak) IBOutlet NSButton *btn_tate_kesi;
+@property (weak) IBOutlet NSButton *btn_vanish;
 
 // tab BALLOON
-@property (assign) IBOutlet NSTableView *tableBalloon;
+@property (weak) IBOutlet NSTableView *tableBalloon;
 
 // tab SHELL
-@property (assign) IBOutlet NSTableView *table_shell;
+@property (weak) IBOutlet NSTableView *table_shell;
 
 // view DETAIL
-@property (assign) IBOutlet NSTextField *fld_identification;
-@property (assign) IBOutlet NSTextField *fld_mastershiori;
-@property (assign) IBOutlet NSTextField *fld_n_shells;
-@property (assign) IBOutlet NSTextField *fld_makoto;
+@property (weak) IBOutlet NSTextField *fld_identification;
+@property (weak) IBOutlet NSTextField *fld_mastershiori;
+@property (weak) IBOutlet NSTextField *fld_n_shells;
+@property (weak) IBOutlet NSTextField *fld_makoto;
 
 // view THUMBNAIL
-@property (assign) IBOutlet NSImageView *image_thumbnail;
+@property (weak) IBOutlet NSImageView *image_thumbnail;
 
 
-- (id)initWithSCGhostManager:(SCGhostManager *)s;
+- (instancetype)initWithSCGhostManager:(SCGhostManager *)s NS_DESIGNATED_INITIALIZER;
 -(void)showWindow:(id)sender;
 
 // Actions

@@ -16,13 +16,13 @@
 
 @implementation SCInstalledGhostsList
 
--(id)initWithSCGhostManager:(SCGhostManager *)gm{
+-(instancetype)initWithSCGhostManager:(SCGhostManager *)gm{
     self = [super init];
     if (self) {
         ghostManager=gm;
         
         //list = [[NSMutableArray alloc] init];
-        list=[gm installedGhostList];
+        list=gm.installedGhostList;
         sublist = [[NSArray alloc] initWithArray:list];
         //[self reloadList];
         /*
@@ -42,15 +42,14 @@
 
 -(void)sortList{
     NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
-    [list sortUsingDescriptors:[NSArray arrayWithObject:sort]];
+    [list sortUsingDescriptors:@[sort]];
 }
 
 -(void)findBoxUpdated:(NSString *)to_find{
     // find_boxが空だった場合は、単にlistをsublistにコピー。
     // 空でなかった場合、ゴースト名に部分一致でfind_boxの内容を含んでいるものだけをsublistへ。
 	
-    [sublist release];
-    if ([to_find length] == 0) {
+    if (to_find.length == 0) {
         sublist=[[NSArray alloc] initWithArray:list];
     }
     else {
@@ -75,13 +74,13 @@
 //    NSInteger selected_row = [[windowController tableInstalled] selectedRow];
     if (selected_row == -1) return;
     
-    SCGhostsListsElement *elem = (SCGhostsListsElement*)[sublist objectAtIndex:selected_row];
+    SCGhostsListsElement *elem = (SCGhostsListsElement*)sublist[selected_row];
     elem.scale=scale;
     
     // defaultsに保存
     NSMutableDictionary *ghostDefaults = [ghostManager ghostDefaults:elem.path];
-    NSNumber *scaleValue=[NSNumber numberWithDouble:scale];
-    [ghostDefaults setObject:scaleValue forKey:@"scale"];
+    NSNumber *scaleValue=@(scale);
+    ghostDefaults[@"scale"] = scaleValue;
     [ghostManager ghostDefaults:elem.path];
     
     // そのゴーストが起動していたら、ここでスケール変更。
@@ -96,14 +95,14 @@
         // リストで選択されているゴーストの起動/終了をトグル
         if (selected_row == -1) return;
         
-        SCGhostsListsElement *elem = (SCGhostsListsElement*)[sublist objectAtIndex:selected_row];
+        SCGhostsListsElement *elem = (SCGhostsListsElement*)sublist[selected_row];
         
-        SCSession *session = [[SCFoundation sharedFoundation] getSessionByPath:[elem path]];
+        SCSession *session = [[SCFoundation sharedFoundation] getSessionByPath:elem.path];
         if (session == nil) {
             // 起動
             [elem setBootFlag:YES];
             //session=[[SCFoundation sharedFoundation] openSessionByGhostPath:[elem path] ByBalloonPath:nil];
-            session=[[SCSession alloc] initWithGhostPath:[elem path] ShelldirName:[elem shell_dirname] BalloonPath:nil LightMode:NO];
+            session=[[SCSession alloc] initWithGhostPath:elem.path ShelldirName:elem.shell_dirname BalloonPath:nil LightMode:NO];
             [session start];
             //SCSessionStarter.sharedStarter().start(elem.getPath(),elem.getBalloonPath(),elem.getScale());
         }
@@ -137,7 +136,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     NSString *old_key = [defaults stringForKey:@"ghostmanager.ghostlist.sort.key"];
-    NSString *new_key = [tableColumn identifier];
+    NSString *new_key = tableColumn.identifier;
     if ([new_key isEqual:old_key]) {
         // キーが同じなので順序を逆に。
         NSString *old_order = [defaults stringForKey:@"ghostmanager.ghostlist.sort.order"];
@@ -156,9 +155,9 @@
 
 -(void)tableViewSelectionDidChange:(NSNotification *)notification{
     // notificationは無視
-    SCGhostManagerWindowController *windowController = [ghostManager windowController];
+    SCGhostManagerWindowController *windowController = ghostManager.windowController;
     
-    NSInteger selected_row = [[windowController tableInstalled] selectedRow];
+    NSInteger selected_row = windowController.tableInstalled.selectedRow;
     if (selected_row == -1) {
 /*        windowController.getPreviewView().setEmpty();
 	    
@@ -183,19 +182,19 @@
         windowController.setThumbnail(null);*/
     }
     else{
-        SCGhostsListsElement *le=[sublist objectAtIndex:selected_row];
-        NSString *shell_dir =[NSString stringWithFormat:@"%@/%@/shell/%@",[[SCFoundation sharedFoundation] getParentDirOfBundle],[le path],[le shell_dirname]];
-        [[windowController previewView] setImage:shell_dir];
+        SCGhostsListsElement *le=sublist[selected_row];
+        NSString *shell_dir =[NSString stringWithFormat:@"%@/%@/shell/%@",[SCFoundation sharedFoundation].parentDirOfBundle,le.path,le.shell_dirname];
+        [windowController.previewView setImage:shell_dir];
         
         //TODO:
         
         // バルーン
-        SCInstalledBalloonsList *bl = [ghostManager balloonsList];
+        SCInstalledBalloonsList *bl = ghostManager.balloonsList;
         [bl setEnabled:YES];
         //[bl selectBalloon:[le balloon_path]];
         
         // シェル
-        [[ghostManager shellsList] setContent:[le path]];
+        [ghostManager.shellsList setContent:le.path];
     }
 /*    else {
         ListsElement le = (ListsElement)sublist.elementAt(selected_row);
@@ -317,7 +316,7 @@
     if (sublist==nil) {
         return  0;
     }
-    return [sublist count];
+    return sublist.count;
 }
 
 -(BOOL)tableView:(NSTableView *)tableView acceptDrop:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation{
@@ -325,12 +324,12 @@
 }
 
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex{
-    NSString *column_id=[tableColumn identifier];
-    SCGhostsListsElement *elem=(SCGhostsListsElement*)[sublist objectAtIndex:rowIndex];
+    NSString *column_id=tableColumn.identifier;
+    SCGhostsListsElement *elem=(SCGhostsListsElement*)sublist[rowIndex];
     if ([column_id isEqual:@"name"]) {
         //NSMutableAttributedString *mas=[[NSMutableAttributedString alloc] initWithString:[elem name]];
         //mas.addAttributeInRange(NSAttributedString.ForegroundColorAttributeName,BOOTED_COLOR,new NSRange(0,elem.getName().length()));
-        return [elem name];
+        return elem.name;
     }
     return nil;
 }

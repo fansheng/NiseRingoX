@@ -14,13 +14,13 @@
 
 @implementation SCSession
 @synthesize ghostPath;
--(id)initWithGhostPath:(NSString*)ghost_path
+-(instancetype)initWithGhostPath:(NSString*)ghost_path
           ShelldirName:(NSString*)shelldir_name
            BalloonPath:(NSString*)balloon_path
              LightMode:(BOOL)light_mode{
     self = [super init];
     if (self) {
-        ghostPath=[[NSString alloc] initWithFormat:@"%@/%@",[[SCFoundation sharedFoundation] getParentDirOfBundle],ghost_path];
+        ghostPath=[[NSString alloc] initWithFormat:@"%@/%@",[SCFoundation sharedFoundation].parentDirOfBundle,ghost_path];
         
         // master spirit 起動
         masterSpirit = [[SCSpirit alloc] initWithSession:self Dirname:@"master"];
@@ -37,13 +37,13 @@
     }
     return self;
 }
--(id)initWithGhostPath:(NSString *)ghost_path BalloonPath:(NSString *)balloon_path{
+-(instancetype)initWithGhostPath:(NSString *)ghost_path BalloonPath:(NSString *)balloon_path{
     return [self initWithGhostPath:ghost_path ShelldirName:nil BalloonPath:balloon_path LightMode:NO];
 }
 -(void)openShellByScope:(int)scope{
     SCShellWindowController *swc = [[SCShellWindowController alloc] initWithSession:self Scope:0];
     [swc showWindow:nil];
-    [swc changeSurface:[currentShell surfserver] SurfaceID:10];
+    [swc changeSurface:currentShell.surfserver SurfaceID:10];
     
     
     return;

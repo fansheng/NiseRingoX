@@ -17,10 +17,10 @@
     SCDescription *desc;
 }
 
--(id)initWithDescription:(SCDescription*)parentDesc
+-(instancetype)initWithDescription:(SCDescription*)parentDesc
                     path:(NSString*)dir
                     name:(NSString*)bskinname
                       id:(int)argBalloonID
-                   scope:(int)argScope;
+                   scope:(int)argScope NS_DESIGNATED_INITIALIZER;
 
 @end

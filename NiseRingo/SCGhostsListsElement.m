@@ -16,7 +16,7 @@
 @synthesize shell_dirname;
 @synthesize scale;
 
--(id)initWithBootFlag:(BOOL)boot_flag1
+-(instancetype)initWithBootFlag:(BOOL)boot_flag1
                  Path:(NSString *)path1
           BalloonPath:(NSString *)balloon_path1
          ShellDirname:(NSString *)shell_dirname1

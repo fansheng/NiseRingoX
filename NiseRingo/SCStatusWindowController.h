@@ -11,8 +11,8 @@
 #import "SCStatusTextView.h"
 
 @interface SCStatusWindowController : NSWindowController
-@property (assign) IBOutlet SCStatusTextView *view_text_textview;
-@property (assign) IBOutlet SCStatusProgressBarView *view_pbar_view;
+@property (strong) IBOutlet SCStatusTextView *view_text_textview;
+@property (strong) IBOutlet SCStatusProgressBarView *view_pbar_view;
 -(void)setTypeToText;
 -(void)setTypeToProgressBar;
 -(void)texttypePrint:(NSString *)str;

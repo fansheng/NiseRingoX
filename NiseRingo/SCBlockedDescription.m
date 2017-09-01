@@ -9,7 +9,7 @@
 #import "SCBlockedDescription.h"
 
 @implementation SCBlockedDescription
--(id)initWithFilename:(NSString *)filename{
+-(instancetype)initWithFilename:(NSString *)filename{
     self=[super init];
     if (self) {
         [self load:filename];
@@ -39,15 +39,15 @@
         NSString* stringline=[s stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
         // 空の行は無視 コメント行は無視
-        if ([stringline length]==0 || [stringline hasPrefix:@"//"] || [stringline hasPrefix:@"#"]){
+        if (stringline.length==0 || [stringline hasPrefix:@"//"] || [stringline hasPrefix:@"#"]){
             continue;
         }
         if ([stringline hasPrefix:@"{"] && !IsInAilas) {
-            if ([defaultAilas count]==0) {
+            if (defaultAilas.count==0) {
                 continue;
             }
             IsInAilas=YES;
-            ailasname=[[NSString alloc] initWithString:[defaultAilas lastObject]];
+            ailasname=[[NSString alloc] initWithString:defaultAilas.lastObject];
             [defaultAilas removeLastObject];
             ailasArray=[[NSMutableArray alloc] init];
             continue;
@@ -57,7 +57,7 @@
             continue;
         }
         if ([stringline hasPrefix:@"}"]) {
-            [root setObject:ailasArray forKey:ailasname];
+            root[ailasname] = ailasArray;
             IsInAilas=NO;
             ailasname=nil;
             ailasArray=nil;
@@ -66,25 +66,25 @@
         [ailasArray addObject:stringline];
     }
     if (IsInAilas && ailasname!=nil && ailasArray!=nil) {
-        [root setObject:ailasArray forKey:ailasname];
+        root[ailasname] = ailasArray;
         IsInAilas=NO;
         ailasname=nil;
         ailasArray=nil;
     }
-    if([defaultAilas count]!=0){
-        [root setObject:defaultAilas forKey:@""];
+    if(defaultAilas.count!=0){
+        root[@""] = defaultAilas;
     }
 }
 
 -(id)getObjectForKey:(NSString*)key{
     if (root!=nil) {
-        return [root objectForKey:key];
+        return root[key];
     }
     return nil;
 }
 
 -(NSArray *)allKeys{
-    return [root allKeys];
+    return root.allKeys;
 }
 
 @end

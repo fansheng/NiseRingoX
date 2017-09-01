@@ -17,15 +17,15 @@
  コンテクストメニューを開くたびにディレクトリ構成やdescript.txtを読み直す羽目になる。
  */
 @implementation SCShellsList
--(id)initWithSCGhostManager:(SCGhostManager *)gm{
+-(instancetype)initWithSCGhostManager:(SCGhostManager *)gm{
     self = [super init];
     if (self) {
         ghostManager=gm;
         
-        SCGhostManagerWindowController* windowController=[ghostManager windowController];
-        NSTableView *tableView = [windowController tableInstalled];
+        SCGhostManagerWindowController* windowController=ghostManager.windowController;
+        NSTableView *tableView = windowController.tableInstalled;
         
-        [tableView setDataSource:self];
+        tableView.dataSource = self;
          
         list=[[NSMutableArray alloc] init];
     }
@@ -34,18 +34,18 @@
 
 -(void)setContent:(NSString *)ghostRoot{
     
-    NSTableView *table_shell = [[ghostManager windowController] table_shell];
+    NSTableView *table_shell = ghostManager.windowController.table_shell;
     [table_shell deselectAll:self];
     [list removeAllObjects];
     
-    NSString *bundleDir=[[SCFoundation sharedFoundation] getParentDirOfBundle];
+    NSString *bundleDir=[SCFoundation sharedFoundation].parentDirOfBundle;
     NSString *ghostDir=[[bundleDir stringByAppendingPathComponent:ghostRoot] stringByAppendingPathComponent:@"shell"];
     
     NSFileManager *sharedFM = [NSFileManager defaultManager];
     BOOL isDir;
     if ([sharedFM fileExistsAtPath:ghostDir isDirectory:&isDir] && isDir) {
         NSDirectoryEnumerator *dirEnumerator = [sharedFM enumeratorAtURL:[NSURL URLWithString:ghostDir]
-                                              includingPropertiesForKeys:[NSArray arrayWithObjects:NSURLNameKey,NSURLIsDirectoryKey,nil]
+                                              includingPropertiesForKeys:@[NSURLNameKey,NSURLIsDirectoryKey]
                                                                  options:NSDirectoryEnumerationSkipsSubdirectoryDescendants|NSDirectoryEnumerationSkipsHiddenFiles
                                                             errorHandler:nil];
         
@@ -62,7 +62,7 @@
             [theURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:NULL];
             
             // Ignore files under the _extras directory
-            if ([isDirectory boolValue]==YES)
+            if (isDirectory.boolValue==YES)
             {
                 NSString *pathDescriptTxt = [ghostDir stringByAppendingPathComponent:[fileName stringByAppendingPathComponent:@"descript.txt"]];
                 

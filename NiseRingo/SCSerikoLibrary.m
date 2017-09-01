@@ -18,7 +18,7 @@
 #import "SCShell.h"
 
 @implementation SCSerikoLibrary
--(id)initWithShell:(SCShell *)shell{
+-(instancetype)initWithShell:(SCShell *)shell{
     self = [super init];
     if (self) {
         /*
@@ -31,7 +31,7 @@
         従っていたら読み込みます。
         そうでないエントリは無視します。
         */
-        SCBlockedDescription *compDef =[shell surfaceDescriptions];
+        SCBlockedDescription *compDef =shell.surfaceDescriptions;
         
         // versionを見る
         int version = 0;
@@ -44,10 +44,10 @@
                 NSRegularExpression *regex=[NSRegularExpression regularExpressionWithPattern:regexExp options:NSRegularExpressionCaseInsensitive error:&error];
                 NSTextCheckingResult *match = [regex firstMatchInString:line
                                                                 options:0
-                                                                  range:NSMakeRange(0, [line length])];
+                                                                  range:NSMakeRange(0, line.length)];
                 if (match) {
                     NSRange firstHalfRange = [match rangeAtIndex:1];
-                    version=[[line substringWithRange:firstHalfRange] intValue];
+                    version=[line substringWithRange:firstHalfRange].intValue;
                     
                 }
 

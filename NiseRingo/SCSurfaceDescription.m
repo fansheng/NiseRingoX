@@ -10,6 +10,6 @@
 
 @implementation SCSurfaceDescription
 -(NSArray *)surfaceKeys{
-    return [root allKeys];
+    return root.allKeys;
 }
 @end

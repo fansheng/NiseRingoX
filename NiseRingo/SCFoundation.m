@@ -56,7 +56,7 @@
 }
 
 -(NSString*)getParentDirOfBundle{
-    NSString *parOfBundle=[[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent];
+    NSString *parOfBundle=[NSBundle mainBundle].bundlePath.stringByDeletingLastPathComponent;
     return parOfBundle;
 }
 
@@ -64,21 +64,21 @@
 {
     // 起動中のセッションのうち、どれか一つを返します。
     // 一つも起動していなかったらnullを返します。
-    if ([sessions count] == 0) return nil;
+    if (sessions.count == 0) return nil;
     
-    int session_idx = (int)((random() * 10000) % [sessions count]);
-    return (SCSession*)[sessions objectAtIndex:session_idx];
+    int session_idx = (int)((random() * 10000) % sessions.count);
+    return (SCSession*)sessions[session_idx];
 }
 
 -(SCSession*)getSessionByPath:(NSString*)ghostPath{
     // 起動中のセッションの中から、ゴーストパスがghostPathであるセッションを探して返します。
     // 見つからなかったらnullを返します。
     SCSession *result = nil;
-    NSInteger n_sessions =[sessions count];
+    NSInteger n_sessions =sessions.count;
     for (int i = 0;i < n_sessions;i++)
     {
-        SCSession *s = (SCSession*)[sessions objectAtIndex:i];
-        if ([[s ghostPath] isEqual:ghostPath])
+        SCSession *s = (SCSession*)sessions[i];
+        if ([s.ghostPath isEqual:ghostPath])
         {
             result = s;
             break;

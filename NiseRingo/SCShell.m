@@ -15,15 +15,15 @@
 @synthesize surfaceDescriptions;
 @synthesize surfserver;
 @synthesize shellRootDir;
--(id)initWithSession:(SCSession*)argSession
+-(instancetype)initWithSession:(SCSession*)argSession
              Dirname:(NSString*)argDirname{
     self = [super init];
     if (self) {
         session=argSession;
         
-        NSLog(@"%@/shell/%@",[session ghostPath],argDirname);
+        NSLog(@"%@/shell/%@",session.ghostPath,argDirname);
         // Initialization code here.
-        shellRootDir=[NSString stringWithFormat:@"%@/shell/%@",[session ghostPath],argDirname];
+        shellRootDir=[NSString stringWithFormat:@"%@/shell/%@",session.ghostPath,argDirname];
         descManager=[[SCDescription alloc] initWithFilename:[shellRootDir stringByAppendingPathComponent:@"descript.txt"]];
         shellname=[descManager getStrValue:@"name"];
         

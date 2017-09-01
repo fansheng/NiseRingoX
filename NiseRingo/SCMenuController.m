@@ -60,15 +60,15 @@
 }
 
 -(BOOL)validateMenuItem:(NSMenuItem *)menuItem{
-    if (menuItem==[self showPrefWindow]) {
+    if (menuItem==self.showPrefWindow) {
         SCPrefWindowController* pref = [SCPrefWindowController sharedPrefWindowController];
-        return ![[pref window] isVisible];
+        return !pref.window.visible;
     }
-    else if(menuItem==[self mailcheck]){
+    else if(menuItem==self.mailcheck){
         //TODO:
         return YES;
     }
-    else if(menuItem==[self quit]){
+    else if(menuItem==self.quit){
         //TODO:
         return YES;
     }

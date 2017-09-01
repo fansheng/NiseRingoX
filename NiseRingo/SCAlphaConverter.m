@@ -17,22 +17,22 @@
     unsigned char trR,trG,trB,trA;
     NSInteger spp,width,height,src_bytesPerRow,dst_bytesPerRow,sI,dI,x,y;
     NSImage *image;
-    
-    srcBitmap = [[srcImage representations] objectAtIndex:0];
-    srcData = [srcBitmap bitmapData];
+    srcBitmap=[NSBitmapImageRep imageRepWithData:srcImage.TIFFRepresentation];
+    //srcBitmap = [[srcImage representations] objectAtIndex:0];
+    srcData = srcBitmap.bitmapData;
     trR = srcData[0];
     trG = srcData[1];
     trB = srcData[2];
-    spp = [srcBitmap samplesPerPixel];
-    width = [srcBitmap pixelsWide];
-    height = [srcBitmap pixelsHigh];
+    spp = srcBitmap.samplesPerPixel;
+    width = srcBitmap.pixelsWide;
+    height = srcBitmap.pixelsHigh;
     
-    image = [[[NSImage alloc] init] autorelease];
+    image = [[NSImage alloc] init];
     //image = [[NSImage alloc] init];
     destBitmap = [[NSBitmapImageRep alloc] initWithBitmapDataPlanes:NULL
                                                          pixelsWide:width
                                                          pixelsHigh:height
-                                                      bitsPerSample:[srcBitmap bitsPerSample]
+                                                      bitsPerSample:srcBitmap.bitsPerSample
                                                     samplesPerPixel:4
                                                            hasAlpha:YES
                                                            isPlanar:NO
@@ -41,13 +41,12 @@
                                                        bitsPerPixel:0];
     [image addRepresentation:destBitmap];
     
-    destData = [destBitmap bitmapData];
-    [destBitmap release];
+    destData = destBitmap.bitmapData;
     
-    src_bytesPerRow = [srcBitmap bytesPerRow];
-    dst_bytesPerRow = [destBitmap bytesPerRow];
+    src_bytesPerRow = srcBitmap.bytesPerRow;
+    dst_bytesPerRow = destBitmap.bytesPerRow;
     
-    switch ([srcBitmap samplesPerPixel]) {
+    switch (srcBitmap.samplesPerPixel) {
         case	3:
             for (y = 0; y < height; y++) {
                 sI = y * src_bytesPerRow;
@@ -110,40 +109,39 @@
     unsigned char *srcData,*destData;
     NSInteger src_bytesPerRow,dst_bytesPerRow,sI,dI,x,y,width,height;
     
-    if ([src size].width != [dest size].width || [src size].height != [dest size].height) {
+    if (src.size.width != dest.size.width || src.size.height != dest.size.height) {
         NSLog(@"SCAlphaConverter -attachAlpha:toImage: : Parameters were images which have different size.");
         return;
     }
     
-    srcBits = [[src representations] objectAtIndex:0];
-    destBits = [[dest representations] objectAtIndex:0];
+    srcBits = src.representations[0];
+    destBits = dest.representations[0];
     
-    if ([destBits samplesPerPixel] != 4) {
+    if (destBits.samplesPerPixel != 4) {
         NSLog(@"SCAlphaConverter -attachAlpha:toImage: : Destination didn¥'t have alpha channel.");
         return;
     }
     
     // 2002-04-03 toveta 特殊なColorSpaceの場合、変換処理をかけます
-    if(![ [ srcBits colorSpaceName ] isEqualToString:NSCalibratedRGBColorSpace ]) {
-        NSImage *buffer=[ [NSImage alloc] initWithSize:[src size] ];
+    if(![ srcBits.colorSpaceName isEqualToString:NSCalibratedRGBColorSpace ]) {
+        NSImage *buffer=[ [NSImage alloc] initWithSize:src.size ];
         //[ buffer setCacheMode: NSImageCacheNever ];
         [ buffer lockFocus ];
         [ src compositeToPoint:NSZeroPoint operation:NSCompositeCopy ];
         [ buffer unlockFocus ];
-        srcBits = [ [ NSBitmapImageRep alloc ] initWithData:[ buffer TIFFRepresentation ] ];
-        [ buffer release ];
+        srcBits = [ [ NSBitmapImageRep alloc ] initWithData: buffer.TIFFRepresentation ];
     }
     
-    srcData = [srcBits bitmapData];
-    destData = [destBits bitmapData];
+    srcData = srcBits.bitmapData;
+    destData = destBits.bitmapData;
     
-    width = [srcBits pixelsWide];
-    height = [srcBits pixelsHigh];
+    width = srcBits.pixelsWide;
+    height = srcBits.pixelsHigh;
     
-    src_bytesPerRow = [srcBits bytesPerRow];
-    dst_bytesPerRow = [destBits bytesPerRow];
+    src_bytesPerRow = srcBits.bytesPerRow;
+    dst_bytesPerRow = destBits.bytesPerRow;
     
-    switch ([srcBits samplesPerPixel]) {
+    switch (srcBits.samplesPerPixel) {
         case	3:
             for (y = 0; y < height; y++) {
                 sI = y * src_bytesPerRow;

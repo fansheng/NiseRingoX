@@ -13,7 +13,7 @@
 @synthesize name;
 @synthesize path;
 
--(id)initWithPath:(NSString *)path1{
+-(instancetype)initWithPath:(NSString *)path1{
     path=path1;
     SCDescription *descm = [[SCDescription alloc] initWithFilename:[path stringByAppendingPathComponent:@"descript.txt"]];
     name=[descm getStrValue:@"name"];

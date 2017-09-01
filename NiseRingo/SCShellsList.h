@@ -15,7 +15,7 @@
 }
 
 
-- (id)initWithSCGhostManager:(SCGhostManager *)gm;
+- (instancetype)initWithSCGhostManager:(SCGhostManager *)gm NS_DESIGNATED_INITIALIZER;
 -(void)setContent:(NSString *)ghostRoot;
 
 @end

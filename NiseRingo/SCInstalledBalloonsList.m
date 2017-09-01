@@ -13,15 +13,15 @@
 
 @implementation SCInstalledBalloonsList
 
--(id)initWithSCGhostManager:(SCGhostManager *)gm{
+-(instancetype)initWithSCGhostManager:(SCGhostManager *)gm{
     self = [super init];
     if (self) {
         selected_item = 0;
         
         ghostManager=gm;
         
-        NSTableView *tableBalloon = [[ghostManager windowController] tableBalloon];
-        [tableBalloon setDataSource:self];
+        NSTableView *tableBalloon = ghostManager.windowController.tableBalloon;
+        tableBalloon.dataSource = self;
         /*
         NSButtonCell *bc=[[NSButtonCell alloc] init];
         [bc setButtonType:NSRadioButton];
@@ -52,19 +52,19 @@
 
 -(void)setEnabled:(BOOL)boolflag{
     NSTableColumn *tc;
-    NSTableView *tableBalloon = [[ghostManager windowController] tableBalloon];
+    NSTableView *tableBalloon = ghostManager.windowController.tableBalloon;
     tc = [tableBalloon tableColumnWithIdentifier:@"select"];
-    [[tc dataCell] setEnabled:boolflag];
+    [tc.dataCell setEnabled:boolflag];
     [tableBalloon setNeedsDisplay];
 }
 
 -(void)selectBalloon:(NSString *)balloon_path{
     // home/balloon/からのパスで指定されたバルーンを、リスト内のラジオボタンで選択します。
     // 見つからなかったらbuilt-inになります。
-    NSUInteger n_items = [list count];
+    NSUInteger n_items = list.count;
     int found_id = 0; // 0 = built-in
     for (int i = 0;i < n_items;i++) {
-        if ([balloon_path isEqual:[(SCBalloonsListElement *)[list objectAtIndex:i] path]]) {
+        if ([balloon_path isEqual:((SCBalloonsListElement *)list[i]).path]) {
             // 見つけた
             found_id = i+1;
             break;
@@ -72,24 +72,24 @@
     }
     selected_item = found_id;
     
-    NSTableView *tableBalloon = [[ghostManager windowController] tableBalloon];
+    NSTableView *tableBalloon = ghostManager.windowController.tableBalloon;
     [tableBalloon reloadData];
     [tableBalloon scrollColumnToVisible:found_id];
 }
 
 -(void)reloadList{
-    NSTableView *tableBalloon = [[ghostManager windowController] tableBalloon];
+    NSTableView *tableBalloon = ghostManager.windowController.tableBalloon;
     [tableBalloon deselectAll:self];
     [list removeAllObjects];
     
-    NSString *bundleDir=[[SCFoundation sharedFoundation] getParentDirOfBundle];
+    NSString *bundleDir=[SCFoundation sharedFoundation].parentDirOfBundle;
     NSString *ghostDir=[bundleDir stringByAppendingPathComponent:@"home/balloon"];
     
     NSFileManager *sharedFM = [NSFileManager defaultManager];
     BOOL isDir;
     if ([sharedFM fileExistsAtPath:ghostDir isDirectory:&isDir] && isDir) {
         NSDirectoryEnumerator *dirEnumerator = [sharedFM enumeratorAtURL:[NSURL URLWithString:ghostDir]
-                                              includingPropertiesForKeys:[NSArray arrayWithObjects:NSURLNameKey,NSURLIsDirectoryKey,nil]
+                                              includingPropertiesForKeys:@[NSURLNameKey,NSURLIsDirectoryKey]
                                                                  options:NSDirectoryEnumerationSkipsSubdirectoryDescendants|NSDirectoryEnumerationSkipsHiddenFiles
                                                             errorHandler:nil];
         
@@ -106,7 +106,7 @@
             [theURL getResourceValue:&isDirectory forKey:NSURLIsDirectoryKey error:NULL];
             
             // Ignore files under the _extras directory
-            if ([isDirectory boolValue]==YES)
+            if (isDirectory.boolValue==YES)
             {
                 NSString *pathDescriptTxt = [ghostDir stringByAppendingPathComponent:[fileName stringByAppendingPathComponent:@"descript.txt"]];
                 
@@ -116,8 +116,8 @@
                 }
             }
             
-            int maxHeight = [self getMaxHeightOfThumbnails];
-            [tableBalloon setRowHeight:(maxHeight > 18 ? maxHeight : 18)];
+            int maxHeight = self.maxHeightOfThumbnails;
+            tableBalloon.rowHeight = (maxHeight > 18 ? maxHeight : 18);
 
             [tableBalloon reloadData];
         }
@@ -129,11 +129,11 @@
     // リスト中の全てのサムネイル画像のうち、最も高さの大きな画像の高さを返します。
 	int result = 0;
 	
-    NSUInteger n_elems = [list count];
+    NSUInteger n_elems = list.count;
 	for (int i = 0;i < n_elems;i++) {
-	    SCBalloonsListElement *le = (SCBalloonsListElement *)[list objectAtIndex:i];
-	    if ([le thumbnail] != nil) {
-            int h = (int)[[le thumbnail] size].height;
+	    SCBalloonsListElement *le = (SCBalloonsListElement *)list[i];
+	    if (le.thumbnail != nil) {
+            int h = (int)le.thumbnail.size.height;
             if (h > result) result = h;
 	    }
 	}
@@ -146,7 +146,7 @@
     if (list==nil) {
         return  0;
     }
-    return [list count]+1;
+    return list.count+1;
 }
 
 -(BOOL)tableView:(NSTableView *)tableView acceptDrop:(id<NSDraggingInfo>)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)dropOperation{
@@ -154,7 +154,7 @@
 }
 
 -(id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)rowIndex{
-    NSString *column_id=[tableColumn identifier];
+    NSString *column_id=tableColumn.identifier;
     if ([column_id isEqual:@"select"]) {
         //NSLog(@"%d,%lU",selected_item,(long)rowIndex);
         return (selected_item == rowIndex ? @"1" : @"0");
@@ -166,8 +166,8 @@
 	    }
         else
         {
-        SCBalloonsListElement *elem=(SCBalloonsListElement*)[list objectAtIndex:rowIndex-1];
-        return [elem thumbnail];
+        SCBalloonsListElement *elem=(SCBalloonsListElement*)list[rowIndex-1];
+        return elem.thumbnail;
         }
         
     }
@@ -177,8 +177,8 @@
 	    }
         else
         {
-            SCBalloonsListElement *elem=(SCBalloonsListElement*)[list objectAtIndex:rowIndex-1];
-            return [elem name];
+            SCBalloonsListElement *elem=(SCBalloonsListElement*)list[rowIndex-1];
+            return elem.name;
         }
     }
     return @"";

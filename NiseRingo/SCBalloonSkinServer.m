@@ -11,12 +11,12 @@
 #import "SCAlphaConverter.h"
 
 @implementation SCBalloonSkinServer
--(id)initWithPath:(NSString *)dir_path{
+-(instancetype)initWithPath:(NSString *)dir_path{
     self = [super init];
     if (self) {
         // 存在しないパスを示すバルーンスキンサーバを作ろうとした場合、空のサーバーが生成されます。
         path=dir_path;
-        NSString *dir=[[[SCFoundation sharedFoundation] getParentDirOfBundle] stringByAppendingPathComponent:path];
+        NSString *dir=[[SCFoundation sharedFoundation].parentDirOfBundle stringByAppendingPathComponent:path];
         
         desc=[[SCDescription alloc] initWithFilename:[dir stringByAppendingPathComponent:@"descript.txt"]];
         name=[desc getStrValue:@"name"];

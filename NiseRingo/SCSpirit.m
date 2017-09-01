@@ -10,12 +10,12 @@
 #import "SCSession.h"
 
 @implementation SCSpirit
--(id)initWithSession:(SCSession*)argSession
+-(instancetype)initWithSession:(SCSession*)argSession
              Dirname:(NSString*)argDirname{
     self = [super init];
     if (self) {
         session=argSession;
-        spiritRootDir=[NSString stringWithFormat:@"%@/ghost/%@",[session ghostPath],argDirname];
+        spiritRootDir=[NSString stringWithFormat:@"%@/ghost/%@",session.ghostPath,argDirname];
         descManager=[[SCDescription alloc] initWithFilename:[spiritRootDir stringByAppendingPathComponent:@"descript.txt"]];
         
         name=[descManager getStrValue:@"name"];

@@ -12,8 +12,8 @@
     NSMutableDictionary* root;
 }
 
--(id)initWithFilename:(NSString*) filename;
+-(instancetype)initWithFilename:(NSString*) filename NS_DESIGNATED_INITIALIZER;
 -(void)load:(NSString*) filename;
 -(id)getObjectForKey:(NSString*)key;
--(NSArray *)allKeys;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray *allKeys;
 @end

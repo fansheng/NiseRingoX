@@ -15,7 +15,7 @@
     NSArray* sublist;
 }
 
-- (id)initWithSCGhostManager:(SCGhostManager *)gm;
+- (instancetype)initWithSCGhostManager:(SCGhostManager *)gm NS_DESIGNATED_INITIALIZER;
 -(void)sortList;
 -(void)findBoxUpdated:(NSString *)to_find;
 -(void)changeScale:(double)scale

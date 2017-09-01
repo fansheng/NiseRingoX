@@ -22,6 +22,6 @@
     NSString *keroname;
 }
 
--(id)initWithSession:(SCSession*)argSession
-             Dirname:(NSString*)dirname;
+-(instancetype)initWithSession:(SCSession*)argSession
+             Dirname:(NSString*)dirname NS_DESIGNATED_INITIALIZER;
 @end

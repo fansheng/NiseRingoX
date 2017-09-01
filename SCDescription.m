@@ -9,7 +9,7 @@
 #import "SCDescription.h"
 
 @implementation SCDescription
--(id)initWithFilename:(NSString *)filename{
+-(instancetype)initWithFilename:(NSString *)filename{
     self=[super init];
     if (self) {
         [self load:filename];
@@ -32,7 +32,7 @@
     NSArray *arrayFile =[stringFromFile componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     for (NSString *s in arrayFile) {
         NSString* stringline=[s stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if ([stringline length]!=0 && ![stringline hasPrefix:@"//"] && ![stringline hasPrefix:@"#"])
+        if (stringline.length!=0 && ![stringline hasPrefix:@"//"] && ![stringline hasPrefix:@"#"])
         {
             NSRange range=[stringline rangeOfString:@","];
             if (range.location!=NSNotFound) {
@@ -46,7 +46,7 @@
 }
 
 -(NSString*)getStrValue:(NSString*)key{
-    return [table objectForKey:key];
+    return table[key];
 }
 
 @end

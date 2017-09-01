@@ -21,11 +21,11 @@
 }
 @property (readwrite,copy)NSString* ghostPath;
 
--(id)initWithGhostPath:(NSString*)ghost_path
+-(instancetype)initWithGhostPath:(NSString*)ghost_path
           ShelldirName:(NSString*)shelldir_name
            BalloonPath:(NSString*)balloon_path
-             LightMode:(BOOL)light_mode;
--(id)initWithGhostPath:(NSString*)ghost_path
+             LightMode:(BOOL)light_mode NS_DESIGNATED_INITIALIZER;
+-(instancetype)initWithGhostPath:(NSString*)ghost_path
            BalloonPath:(NSString*)balloon_path;
 -(void)openShellByScope:(int)scope;
 -(void)start;

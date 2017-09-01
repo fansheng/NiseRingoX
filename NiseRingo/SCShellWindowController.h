@@ -17,9 +17,9 @@
     SCSurface *surface;
 }
 
-@property (assign) IBOutlet SCShellView *view;
-- (id)initWithSession:(SCSession*)s
-                Scope:(int)scope;
+@property (weak) IBOutlet SCShellView *view;
+- (instancetype)initWithSession:(SCSession*)s
+                Scope:(int)scope NS_DESIGNATED_INITIALIZER;
 -(void)changeSurface:(SCSurfaceServer *)sserver
            SurfaceID:(int)surfaceID;
 - (IBAction)changeImage:(id)sender;

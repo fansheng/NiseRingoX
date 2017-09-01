@@ -15,13 +15,13 @@
 @implementation SCStatusWindowController
 
 
--(id)initWithWindowNibName:(NSString *)windowNibName
+-(instancetype)initWithWindowNibName:(NSString *)windowNibName
 {
     self=[super initWithWindowNibName:windowNibName];
     if (self) {
         // Initialization code here.
-        self.view_text_textview=[[SCStatusTextView alloc] initWithFrame:[[self window] frame]];
-        self.view_pbar_view=[[SCStatusProgressBarView alloc] initWithFrame:[[self window] frame]];
+        self.view_text_textview=[[SCStatusTextView alloc] initWithFrame:self.window.frame];
+        self.view_pbar_view=[[SCStatusProgressBarView alloc] initWithFrame:self.window.frame];
         
     }
     
@@ -37,18 +37,18 @@
 
 -(void)setTypeToText
 {
-    [[self window] setContentView:[self view_text_textview]];
+    self.window.contentView = self.view_text_textview;
     //[[self window] display];
     //[[self view_text_textview] display];
 }
 
 -(void)setTypeToProgressBar
 {
-    [[self window] setContentView:[self view_pbar_view]];
+    self.window.contentView = self.view_pbar_view;
 }
 
 -(void)texttypePrint:(NSString *)str
 {
-    [[self view_text_textview] printstr:str];
+    [self.view_text_textview printstr:str];
 }
 @end

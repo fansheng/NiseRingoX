@@ -15,7 +15,7 @@
     SCShell *shell;
     NSMutableDictionary * surfaces; // key : (Integer)ID , value : (SCSurface)サーフィス
 }
--(id)initWithShell:(SCShell *)argShell;
+-(instancetype)initWithShell:(SCShell *)argShell NS_DESIGNATED_INITIALIZER;
 -(SCSurface*)findSurface:(int)surfaceID;
 
 @end

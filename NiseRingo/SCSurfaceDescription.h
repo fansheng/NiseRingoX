@@ -10,7 +10,7 @@
 #import "SCBlockedDescription.h"
 
 @interface SCSurfaceDescription : SCBlockedDescription
--(NSArray *)surfaceKeys;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSArray *surfaceKeys;
 
 
 @end

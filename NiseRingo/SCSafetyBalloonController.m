@@ -14,15 +14,15 @@
 
 @implementation SCSafetyBalloonController
 
--(id)init{
+-(instancetype)init{
     self = [super initWithWindowNibName:@"SafetyBalloon"];
     if (self) {
         // Initialization code here.
-        [[self window] setAcceptsMouseMovedEvents:YES];
-        [[self window] setDelegate:self];
-        [[self window] setAutodisplay:YES];
-        [[self window] useOptimizedDrawing:NO];
-        [[self textScrollView] setDrawsBackground:NO];
+        [self.window setAcceptsMouseMovedEvents:YES];
+        self.window.delegate = self;
+        [self.window setAutodisplay:YES];
+        [self.window useOptimizedDrawing:NO];
+        [self.textScrollView setDrawsBackground:NO];
     }
     
     return self;
@@ -40,7 +40,7 @@
 }
 
 -(void)addChar:(unichar)c{
-    [[self textview] addChar:c];
+    [self.textview addChar:c];
 }
 
 @end

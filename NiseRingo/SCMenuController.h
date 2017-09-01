@@ -10,11 +10,11 @@
 
 @interface SCMenuController : NSMenu
 
-@property (assign) IBOutlet NSMenuItem *showPrefWindow;
-@property (assign) IBOutlet NSMenuItem *quit;
+@property (weak) IBOutlet NSMenuItem *showPrefWindow;
+@property (weak) IBOutlet NSMenuItem *quit;
 
-@property (assign) IBOutlet NSMenu *mainmenu;
-@property (assign) IBOutlet NSMenuItem *mailcheck;
+@property (weak) IBOutlet NSMenu *mainmenu;
+@property (weak) IBOutlet NSMenuItem *mailcheck;
 
 - (IBAction)toggleShioriLog:(id)sender;
 - (IBAction)toggleShioriLocked:(id)sender;

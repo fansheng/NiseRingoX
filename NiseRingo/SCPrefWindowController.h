@@ -10,44 +10,44 @@
 
 @interface SCPrefWindowController : NSWindowController<NSWindowDelegate>
 
-@property (assign) IBOutlet NSButton *booting_check_oldest_type;
-@property (assign) IBOutlet NSButton *booting_check_inverse_type;
-@property (assign) IBOutlet NSButton *booting_check_ghost_thumbnail;
-@property (assign) IBOutlet NSButton *booting_check_zeropoint_balloon;
+@property (weak) IBOutlet NSButton *booting_check_oldest_type;
+@property (weak) IBOutlet NSButton *booting_check_inverse_type;
+@property (weak) IBOutlet NSButton *booting_check_ghost_thumbnail;
+@property (weak) IBOutlet NSButton *booting_check_zeropoint_balloon;
 
-@property (assign) IBOutlet NSButton *mailcheck_check_enable;
-@property (assign) IBOutlet NSTextField *mailcheck_fld_server;
-@property (assign) IBOutlet NSTextField *mailcheck_fld_username;
-@property (assign) IBOutlet NSSecureTextField *mailcheck_fld_password;
-@property (assign) IBOutlet NSButton *mailcheck_check_autocheck;
-@property (assign) IBOutlet NSTextField *mailcheck_fld_autocheck_interval;
+@property (weak) IBOutlet NSButton *mailcheck_check_enable;
+@property (weak) IBOutlet NSTextField *mailcheck_fld_server;
+@property (weak) IBOutlet NSTextField *mailcheck_fld_username;
+@property (weak) IBOutlet NSSecureTextField *mailcheck_fld_password;
+@property (weak) IBOutlet NSButton *mailcheck_check_autocheck;
+@property (weak) IBOutlet NSTextField *mailcheck_fld_autocheck_interval;
 
-@property (assign) IBOutlet NSButton *sstp_switch;
-@property (assign) IBOutlet NSMatrix *sstp_portselect;
-@property (assign) IBOutlet NSTextView *sstp_logview;
+@property (weak) IBOutlet NSButton *sstp_switch;
+@property (weak) IBOutlet NSMatrix *sstp_portselect;
+@property (unsafe_unretained) IBOutlet NSTextView *sstp_logview;
 
-@property (assign) IBOutlet NSTableView *plugin_list;
+@property (weak) IBOutlet NSTableView *plugin_list;
 
-@property (assign) IBOutlet NSMatrix *display_sb_levelselect;
-@property (assign) IBOutlet NSButton *display_sb_activate_on_script;
-@property (assign) IBOutlet NSTextField *display_sb_fontnamefield;
-@property (assign) IBOutlet NSTextField *display_sb_fontsizefield;
-@property (assign) IBOutlet NSSlider *display_sb_slider_transparency;
-@property (assign) IBOutlet NSTextField *display_sb_fld_transparency;
-@property (assign) IBOutlet NSButton *display_sb_balloon_fadeout;
-@property (assign) IBOutlet NSButton *display_sb_balloon_clickthrough;
-@property (assign) IBOutlet NSSlider *display_sb_slider_waitrate;
-@property (assign) IBOutlet NSTextField *display_sb_fld_waitrate;
+@property (weak) IBOutlet NSMatrix *display_sb_levelselect;
+@property (weak) IBOutlet NSButton *display_sb_activate_on_script;
+@property (weak) IBOutlet NSTextField *display_sb_fontnamefield;
+@property (weak) IBOutlet NSTextField *display_sb_fontsizefield;
+@property (weak) IBOutlet NSSlider *display_sb_slider_transparency;
+@property (weak) IBOutlet NSTextField *display_sb_fld_transparency;
+@property (weak) IBOutlet NSButton *display_sb_balloon_fadeout;
+@property (weak) IBOutlet NSButton *display_sb_balloon_clickthrough;
+@property (weak) IBOutlet NSSlider *display_sb_slider_waitrate;
+@property (weak) IBOutlet NSTextField *display_sb_fld_waitrate;
 
-@property (assign) IBOutlet NSTextField *display_gm_preview_fpath;
+@property (weak) IBOutlet NSTextField *display_gm_preview_fpath;
 
-@property (assign) IBOutlet NSButton *misc_always_show_vanish;
-@property (assign) IBOutlet NSButton *misc_delete_after_online_install;
-@property (assign) IBOutlet NSButton *misc_load_whole_surfaces;
-@property (assign) IBOutlet NSButton *misc_disable_seriko_animation;
-@property (assign) IBOutlet NSButton *misc_show_dev_interfaces;
-@property (assign) IBOutlet NSTextField *misc_lightmode_on_sstp;
-@property (assign) IBOutlet NSButton *misc_reset_surface_on_sstp;
+@property (weak) IBOutlet NSButton *misc_always_show_vanish;
+@property (weak) IBOutlet NSButton *misc_delete_after_online_install;
+@property (weak) IBOutlet NSButton *misc_load_whole_surfaces;
+@property (weak) IBOutlet NSButton *misc_disable_seriko_animation;
+@property (weak) IBOutlet NSButton *misc_show_dev_interfaces;
+@property (weak) IBOutlet NSTextField *misc_lightmode_on_sstp;
+@property (weak) IBOutlet NSButton *misc_reset_surface_on_sstp;
 
 +(SCPrefWindowController *)sharedPrefWindowController;
 

@@ -12,7 +12,7 @@
 @implementation SCSurface
 @synthesize rawImage;
 @synthesize surfaceID;
--(id)initWithFile:(NSString*)f
+-(instancetype)initWithFile:(NSString*)f
         surfaceID:(int)argSurfaceID
       Description:(SCBlockedDescription*)comprehensiveDefinitions{
     self = [super init];

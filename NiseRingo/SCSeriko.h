@@ -19,6 +19,6 @@
     SCSerikoLibrary *seriko_lib;
     SCShell *shell;
 }
--(id)initWithShell:(SCShell *)shell;
+-(instancetype)initWithShell:(SCShell *)shell NS_DESIGNATED_INITIALIZER;
 
 @end

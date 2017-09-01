@@ -10,7 +10,7 @@
 
 @implementation SCStatusTextView
 
-- (id)initWithFrame:(NSRect)frame
+- (instancetype)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -23,7 +23,7 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     // Drawing code here.
-    NSRect bounds = [self bounds];
+    NSRect bounds = self.bounds;
 	// Fill the view with green
 	[[NSColor greenColor] set];
 	[NSBezierPath fillRect: bounds];
@@ -34,13 +34,13 @@
               value:[NSFont userFontOfSize:22]
               range:NSMakeRange(0, 14)];
     [s addAttribute:NSUnderlineStyleAttributeName
-              value:[NSNumber numberWithInt:1]
+              value:@1
               range:NSMakeRange(0,3)];
     [s addAttribute:NSForegroundColorAttributeName
               value:[NSColor greenColor]
               range:NSMakeRange(0, 8)];
     [s addAttribute:NSSuperscriptAttributeName
-              value:[NSNumber numberWithInt:-1]
+              value:@-1
               range:NSMakeRange(9,5)];
     [s drawInRect:dirtyRect];
 }

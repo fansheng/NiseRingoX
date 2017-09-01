@@ -10,6 +10,6 @@
 
 @class SCShell;
 @interface SCSerikoLibrary : NSObject
--(id)initWithShell:(SCShell *)shell;
+-(instancetype)initWithShell:(SCShell *)shell NS_DESIGNATED_INITIALIZER;
 
 @end

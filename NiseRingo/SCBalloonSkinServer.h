@@ -16,5 +16,5 @@
     NSImage *sstpMarker;
     NSImage *arrow_up,*arrow_down;
 }
--(id)initWithPath:(NSString *)dir_path;
+-(instancetype)initWithPath:(NSString *)dir_path NS_DESIGNATED_INITIALIZER;
 @end

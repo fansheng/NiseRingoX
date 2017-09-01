@@ -13,17 +13,17 @@
 #import "SCShellsList.h"
 
 @interface SCGhostManager : NSObject{
-    SCGhostManagerWindowController* windowController;
-    SCInstalledGhostsList *installedList;
-    SCInstalledBalloonsList *balloonsList;
+    SCGhostManagerWindowController* __weak windowController;
+    SCInstalledGhostsList *__weak installedList;
+    SCInstalledBalloonsList *__weak balloonsList;
     SCShellsList *shellsList;
     NSMutableArray* installedGhostList;
 }
-@property (assign) SCGhostManagerWindowController* windowController;
-@property (assign) SCInstalledGhostsList *installedList;
-@property (assign) SCInstalledBalloonsList *balloonsList;
-@property (assign) SCShellsList *shellsList;
-@property (assign) NSMutableArray* installedGhostList; 
+@property (weak) SCGhostManagerWindowController* windowController;
+@property (weak) SCInstalledGhostsList *installedList;
+@property (weak) SCInstalledBalloonsList *balloonsList;
+@property (weak) SCShellsList *shellsList;
+@property  NSMutableArray* installedGhostList; 
 
 +(SCGhostManager *)sharedSCGhostManager;
 -(void)reloadLists;

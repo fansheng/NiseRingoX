@@ -11,9 +11,9 @@
 #import "SCSafetyBalloonBackgroundView.h"
 
 @interface SCSafetyBalloonController : NSWindowController<NSWindowDelegate>
-@property (assign) IBOutlet NSScrollView *textScrollView;
-@property (assign) IBOutlet SCBalloonTextView *textview;
-@property (assign) IBOutlet SCSafetyBalloonBackgroundView *bgview;
+@property (weak) IBOutlet NSScrollView *textScrollView;
+@property (weak) IBOutlet SCBalloonTextView *textview;
+@property (weak) IBOutlet SCSafetyBalloonBackgroundView *bgview;
 
 -(void)addChar:(unichar)c;
 @end

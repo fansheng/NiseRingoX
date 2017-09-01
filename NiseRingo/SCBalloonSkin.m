@@ -10,7 +10,7 @@
 #import "SCAlphaConverter.h"
 
 @implementation SCBalloonSkin
--(id)initWithDescription:(SCDescription*)parentDesc
+-(instancetype)initWithDescription:(SCDescription*)parentDesc
                     path:(NSString*)dir
                     name:(NSString*)bskinname
                       id:(int)argBalloonID
@@ -25,7 +25,7 @@
         {
             image = [SCAlphaConverter convertImage:[[NSImage alloc] initWithContentsOfFile:pngfile]];
             frame.origin=NSZeroPoint;
-            frame.size=[image size];
+            frame.size=image.size;
         }
     }
     return self;

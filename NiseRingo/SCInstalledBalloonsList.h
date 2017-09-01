@@ -17,11 +17,11 @@
 
 }
 
-- (id)initWithSCGhostManager:(SCGhostManager *)gm;
+- (instancetype)initWithSCGhostManager:(SCGhostManager *)gm NS_DESIGNATED_INITIALIZER;
 -(void)setEnabled:(BOOL)boolflag;
 -(void)selectBalloon:(NSString *)balloon_path;
 -(void)reloadList;
 
--(int)getMaxHeightOfThumbnails;
+@property (NS_NONATOMIC_IOSONLY, getter=getMaxHeightOfThumbnails, readonly) int maxHeightOfThumbnails;
 
 @end

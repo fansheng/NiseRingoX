@@ -35,7 +35,7 @@
 @property (readwrite,copy)NSString* shell_dirname;
 @property (assign)double scale;
 
--(id)initWithBootFlag:(BOOL)boot_flag
+-(instancetype)initWithBootFlag:(BOOL)boot_flag
                  Path:(NSString *)path
           BalloonPath:(NSString *)balloon_path
          ShellDirname:(NSString *)shell_dirname
